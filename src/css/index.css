@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://use.typekit.net/ylq7fed.css");
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #001e1d;
+}
+
+.theme-font {
+  font-family: brandon-grotesque, sans-serif;
+}
+
+h1.theme-font, h2.theme-font, h3.theme-font, h4.theme-font, h5.theme-font {
+  line-height: 1.1;
+}
+
+.emotion .post-header { @apply .bg-teal-500; }
+.ideation .post-header { @apply .bg-green-500; }
+.clarification .post-header { @apply .bg-yellow-500; }
+.execution .post-header { @apply .bg-red-500; }
+
+.emotion .prose a { @apply .border-teal-500; }
+.ideation .prose a { @apply .border-green-500; }
+.clarification .prose a { @apply .border-yellow-500; }
+.execution .prose a { @apply .border-red-500; }
+
+.prose {
+  font-size: 18px;
+}
+
+.prose p + p {
+  @apply .mt-4;
+}
+
+.prose a {
+  border-bottom-width: .125em;
+  border-style: solid;
+}
+
+.prose a:hover {
+  color: #000;
+}
+
+.prose li + li {
+  @apply .mt-4;
+}
+
+.wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 768px) {
+
+  .griddled {
+    display: grid;
+    grid-template-columns: 1fr 15em;
+    gap: 3em;
+    grid-template-areas:"primary sidebar";
+    grid-auto-flow: dense;
+  }
+
+  .primary { grid-area: primary; }
+  .sidebar { grid-area: sidebar; }
+}
+
+@media only screen and (min-width: 1280px) {
+  .prose {
+    font-size: 21px;
+  }
+}
