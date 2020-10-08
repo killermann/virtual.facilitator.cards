@@ -161,7 +161,7 @@ module.exports = {
             {
               allAirtable(
                 limit: 1000
-                sort: {fields: data___date, order: DESC}
+                sort: {fields: data___Title, order: ASC})
                 filter: {data: {Status: {eq: "Publish"}}}
               ) {
                 edges {
