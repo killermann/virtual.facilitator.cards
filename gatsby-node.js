@@ -99,6 +99,7 @@ exports.createPages = async ({ graphql, actions }) => {
                     excerpt(format: PLAIN)
                   }
                 }
+                Status
               }
             }
           }

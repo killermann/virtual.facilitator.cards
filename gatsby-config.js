@@ -162,7 +162,7 @@ module.exports = {
               allAirtable(
                 limit: 1000
                 sort: {fields: data___date, order: DESC}
-                filter: {data: {status: {eq: "publish"}}}
+                filter: {data: {Status: {eq: "Publish"}}}
               ) {
                 edges {
                   node {
@@ -182,6 +182,7 @@ module.exports = {
                           excerpt(format: PLAIN)
                         }
                       }
+                      Status
                     }
                   }
                 }

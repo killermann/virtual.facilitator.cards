@@ -40,6 +40,7 @@ export const pageQuery = graphql`
             For
             Email
             Apps
+            Status
             Author {
               data {
                 First_Name
