@@ -3,6 +3,25 @@ const _ = require("lodash");
 const moment = require("moment");
 const siteConfig = require("./data/SiteConfig");
 
+// idk 👇
+
+// exports.createSchemaCustomization = ({ actions }) => {
+//   const { createTypes } = actions
+//   const typeDefs = `
+//     type airtable implements Node { 
+//       Title: String! 
+//       Date: Date
+//       Gist: SetGist
+//     }
+//     type SetGist implements Node{
+//       childMarkdownRemark: MarkdownRemark
+//     }
+//   `
+//   createTypes(typeDefs)
+// }
+
+// idk ☝️
+
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
   let slug;
@@ -46,11 +65,13 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const postPage = path.resolve("src/templates/post.jsx");
-  const categoryPage = path.resolve("src/templates/category.jsx");
+  const forPage = path.resolve("src/templates/for.jsx");
+  const cardPage = path.resolve("src/templates/card.jsx");
+  const appsPage = path.resolve("src/templates/app.jsx");
 
   const markdownQueryResult = await graphql(
     `
-      query {
+      query ($dateFormat: String) {
         allAirtable(
           filter: { table: { eq: "Activities" }, data : { Status: {eq: "Publish"} } }
         ) {
@@ -59,11 +80,17 @@ exports.createPages = async ({ graphql, actions }) => {
               data {
                 Title
                 Card
+                For
                 Slug
+                Apps
+                Date(formatString: $dateFormat)
                 Author {
                   data { 
-                    Name
-                    Email
+                    First_Name
+                    Last_Name
+                    Author_Email
+                    Twitter
+                    Website
                   }
                 }
                 Gist {
@@ -85,20 +112,43 @@ exports.createPages = async ({ graphql, actions }) => {
     throw markdownQueryResult.errors;
   }
 
-  const tagSet = new Set();
-  const categorySet = new Set();
+  const appsSet = new Set();
+  const cardsSet = new Set();
+  const forSet = new Set();
 
   const postsEdges = markdownQueryResult.data.allAirtable.edges;
 
+  postsEdges.sort((postA, postB) => {
+    const dateA = moment(
+      postA.node.data.Date,
+      siteConfig.dateFormat
+    );
+
+    const dateB = moment(
+      postB.node.data.Date,
+      siteConfig.dateFormat
+    );
+
+    if (dateA.isBefore(dateB)) return 1;
+    if (dateB.isBefore(dateA)) return -1;
+
+    return 0;
+  });
+
   postsEdges.forEach((edge, index) => {
-    if (edge.node.data.tags) {
-      edge.node.data.tags.forEach(tag => {
-        tagSet.add(tag);
+
+    if (edge.node.data.For) {
+      edge.node.data.For.forEach(For => {
+        forSet.add(For);
       });
     }
 
-    if (edge.node.data.Category) {
-      categorySet.add(edge.node.data.Category);
+    if (edge.node.data.Card) {
+      cardsSet.add(edge.node.data.Card);
+    }
+
+    if (edge.node.data.Apps) {
+      appsSet.add(edge.node.data.Apps);
     }
 
     const nextID = index + 1 < postsEdges.length ? index + 1 : 0;
@@ -120,23 +170,34 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
-  tagSet.forEach(tag => {
+  appsSet.forEach(Apps => {
     createPage({
-      path: `/tags/${_.kebabCase(tag)}/`,
-      component: tagPage,
+      path: `/apps/${_.kebabCase(Apps)}/`,
+      component: appsPage,
       context: {
-        tag,
+        Apps,
+        dateFormat: siteConfig.dateFormat
+      }
+    });
+  });
+
+  cardsSet.forEach(Card => {
+    createPage({
+      path: `/processes/${_.kebabCase(Card)}/`,
+      component: cardPage,
+      context: {
+        Card,
         dateFormat: siteConfig.dateFormat
       }
     });
   });
   
-  categorySet.forEach(Category => {
+  forSet.forEach(For => {
     createPage({
-      path: `/categories/${_.kebabCase(Category)}/`,
-      component: categoryPage,
+      path: `/for/${_.kebabCase(For)}/`,
+      component: forPage,
       context: {
-        Category,
+        For,
         dateFormat: siteConfig.dateFormat
       }
     });

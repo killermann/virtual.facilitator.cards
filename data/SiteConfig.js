@@ -10,7 +10,7 @@ const config = {
   siteFBAppID: "1XXXXXXXXXXX9", // FB Application ID for using app insights
   googleAnalyticsID: "MM-XXXXXXXX-1", // GA tracking ID.
   postDefaultCategoryID: "Tech", // Default category for posts.
-  dateFormat: "DD/MM/YYYY", // Date format for display.
+  dateFormat: "MM/DD/YYYY", // Date format for display.
   copyright: "Uncopyright © 2020", // Copyright string for the footer of the website and RSS feed.
   themeColor: "#3DDBD4", // Used for setting manifest and progress theme colors.
   backgroundColor: "#ffffff" // Used for setting manifest background color.

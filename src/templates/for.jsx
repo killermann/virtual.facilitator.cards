@@ -5,15 +5,15 @@ import Layout from "../layout";
 import PostListing from "../components/PostListing/PostListing";
 import config from "../../data/SiteConfig";
 
-export default class CardTemplate extends React.Component {
+export default class ForTemplate extends React.Component {
   render() {
-    const { Card } = this.props.pageContext;
+    const { For } = this.props.pageContext;
     const postEdges = this.props.data.allAirtable.edges;
     return (
       <Layout>
-        <div className="Card-container">
+        <div className="For-container">
           <Helmet
-            title={`Posts in Card "${Card}" | ${config.siteTitle}`}
+            title={`"Virtual Activities for Facilitating ${For} Processes" | ${config.siteTitle}`}
           />
           <PostListing postEdges={postEdges} />
         </div>
@@ -24,17 +24,17 @@ export default class CardTemplate extends React.Component {
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
-  query CategoryPage($Card: String) {
+  query ForPage($For: String) {
     allAirtable(
       limit: 1000
-      filter: { data : { Card: { eq: $Card }, Status: {eq: "publish"} } }
+      filter: { data : { For: { eq: $For }, Status: {eq: "publish"} } }
     ) {
       totalCount
       edges {
         node {
           data {
             Title
-            Card
+            For
             Slug
           }
         }

@@ -5,15 +5,15 @@ import Layout from "../layout";
 import PostListing from "../components/PostListing/PostListing";
 import config from "../../data/SiteConfig";
 
-export default class CardTemplate extends React.Component {
+export default class AppsTemplate extends React.Component {
   render() {
-    const { Card } = this.props.pageContext;
+    const { Apps } = this.props.pageContext;
     const postEdges = this.props.data.allAirtable.edges;
     return (
       <Layout>
-        <div className="Card-container">
+        <div className="Apps-container">
           <Helmet
-            title={`"${Card} Virtual Facilitation Activities" | ${config.siteTitle}`}
+            title={`"Activities for Virtual Facilitation on Zoom using ${Apps}" | ${config.siteTitle}`}
           />
           <PostListing postEdges={postEdges} />
         </div>
@@ -24,30 +24,18 @@ export default class CardTemplate extends React.Component {
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
-  query CardPage($Card: String) {
+  query AppsPage($Apps: String) {
     allAirtable(
       limit: 1000
-      filter: { data : { Card: { eq: $Card }, Status: {eq: "publish"} } }
+      filter: { data : { Apps: { eq: $Apps }, Status: {eq: "publish"} } }
     ) {
       totalCount
       edges {
         node {
           data {
             Title
-            Card
+            Apps
             Slug
-            Author {
-              data { 
-                First_Name
-                Last_Name
-                Author_Email
-              }
-            }
-            Gist {
-              childMarkdownRemark {
-                html
-              }
-            }
           }
         }
       }
