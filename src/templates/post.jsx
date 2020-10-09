@@ -1,15 +1,15 @@
 import React from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
+import Gravatar from "react-gravatar";
+import kebabCase from "lodash/kebabCase";
 import Layout from "../layout";
 import UserInfo from "../components/UserInfo/UserInfo";
 import Author from "../components/Author/Author"
 import PostTags from "../components/PostTags/PostTags";
 import SocialLinks from "../components/SocialLinks/SocialLinks";
-import Gravatar from "react-gravatar";
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
-import kebabCase from "lodash/kebabCase";
 
 
 export default class PostTemplate extends React.Component {
@@ -18,7 +18,6 @@ export default class PostTemplate extends React.Component {
     const { slug } = pageContext;
     const postNode = data.airtable;
     const post = postNode.data;
-    var imageUrl = post.image ? post.image[0].url : "";
     const author = post.Author ? post.Author[0].data.First_Name + " " + post.Author[0].data.Last_Name : post.Name;
     if (!post.id) {
       post.id = slug;
@@ -37,7 +36,9 @@ export default class PostTemplate extends React.Component {
             <header className="post-header p-8 text-white text-center">
               <span className="app-icon zoom">Zoom</span>
               { post.Apps && 
-                <span className={"app-icon " + kebabCase(post.Apps)}> + {post.Apps}</span>
+                <span className={"app-icon " + kebabCase(post.Apps)}>
+                   + {post.Apps}
+                </span>
               }
             </header>
             <article className="griddled wrap p-6 lg:p-12">
@@ -60,8 +61,9 @@ export default class PostTemplate extends React.Component {
                   {post.Title}
                 </h1>
                 <div className="byline my-6">
-                  <a className="flex items-center" href="#author"><Gravatar email={post.Email} size={46} className="rounded mr-2 border-gray-300 border-2" alt={'Author Headshot'} />
-                  <span className="uppercase text-lg theme-font font-black text-gray-600">{author}</span></a>
+                  <a className="flex items-center" href="#author">
+                    <Gravatar email={post.Email} size={46} className="rounded mr-2 border-gray-300 border-2" alt={'Author Headshot'} />
+                    <span className="uppercase text-lg theme-font font-black text-gray-600">{author}</span></a>
                 </div>
              
                 <section id="gist" className="text-lg lg:text-xl prose" dangerouslySetInnerHTML={{ __html: post.Gist.childMarkdownRemark.html }} />
@@ -101,7 +103,7 @@ export default class PostTemplate extends React.Component {
                 }
               </div>
             </article>
-        </main>
+          </main>
         </div>
       </Layout>
     );

@@ -3,25 +3,6 @@ const _ = require("lodash");
 const moment = require("moment");
 const siteConfig = require("./data/SiteConfig");
 
-// idk 👇
-
-// exports.createSchemaCustomization = ({ actions }) => {
-//   const { createTypes } = actions
-//   const typeDefs = `
-//     type airtable implements Node { 
-//       Title: String! 
-//       Date: Date
-//       Gist: SetGist
-//     }
-//     type SetGist implements Node{
-//       childMarkdownRemark: MarkdownRemark
-//     }
-//   `
-//   createTypes(typeDefs)
-// }
-
-// idk ☝️
-
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
   let slug;
@@ -84,21 +65,6 @@ exports.createPages = async ({ graphql, actions }) => {
                 Slug
                 Apps
                 Date(formatString: $dateFormat)
-                Author {
-                  data { 
-                    First_Name
-                    Last_Name
-                    Author_Email
-                    Twitter
-                    Website
-                  }
-                }
-                Gist {
-                  childMarkdownRemark {
-                    html
-                    excerpt(format: PLAIN)
-                  }
-                }
                 Status
               }
             }
