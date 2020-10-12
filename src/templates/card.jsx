@@ -13,7 +13,7 @@ export default class CardTemplate extends React.Component {
       <Layout>
         <div className="Card-container">
           <Helmet
-            title={`"${Card} Virtual Facilitation Activities" | ${config.siteTitle}`}
+            title={`${Card} Virtual Facilitation Activities | ${config.siteTitle}`}
           />
           <PostListing postEdges={postEdges} />
         </div>

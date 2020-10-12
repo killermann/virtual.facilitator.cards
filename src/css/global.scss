@@ -4,12 +4,16 @@
 
 @import url("https://use.typekit.net/ylq7fed.css");
 
+:root {
+  --text-color:  #001e1d;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  color: #001e1d;
+  color: var(--text-color);
 }
 
 .theme-font {
@@ -20,15 +24,46 @@ h1.theme-font, h2.theme-font, h3.theme-font, h4.theme-font, h5.theme-font {
   line-height: 1.1;
 }
 
-.emotion .post-header { @apply .bg-teal-500; }
-.ideation .post-header { @apply .bg-green-500; }
-.clarification .post-header { @apply .bg-yellow-500; }
-.execution .post-header { @apply .bg-red-500; }
+.emotion {
+  .post-header, 
+  .react-gravatar {
+    @apply .bg-teal-500; 
+  }
 
-.emotion .prose a { @apply .border-teal-500; }
-.ideation .prose a { @apply .border-green-500; }
-.clarification .prose a { @apply .border-yellow-500; }
-.execution .prose a { @apply .border-red-500; }
+  .prose a { 
+    @apply .border-teal-500; 
+  }
+
+}
+.ideation {
+  .post-header, 
+  .react-gravatar {
+    @apply .bg-green-500; 
+  }
+
+  .prose a { 
+    @apply .border-green-500; 
+  }
+
+}
+.clarification {
+  .post-header, 
+  .react-gravatar {
+    @apply .bg-yellow-500; 
+  }
+  .prose a { 
+    @apply .border-yellow-500; 
+  }
+}
+.execution {
+  .post-header, 
+  .react-gravatar { 
+    @apply .bg-red-500;
+  }
+  .prose a {
+    @apply .border-red-500;
+  }
+}
 
 .prose {
   font-size: 18px;

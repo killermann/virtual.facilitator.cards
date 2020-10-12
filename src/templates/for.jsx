@@ -13,7 +13,7 @@ export default class ForTemplate extends React.Component {
       <Layout>
         <div className="For-container">
           <Helmet
-            title={`"Virtual Activities for Facilitating ${For} Processes" | ${config.siteTitle}`}
+            title={`Virtual Activities for Facilitating ${For} Processes | ${config.siteTitle}`}
           />
           <PostListing postEdges={postEdges} />
         </div>

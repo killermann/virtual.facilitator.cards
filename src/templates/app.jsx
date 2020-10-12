@@ -13,7 +13,7 @@ export default class AppsTemplate extends React.Component {
       <Layout>
         <div className="Apps-container">
           <Helmet
-            title={`"Activities for Virtual Facilitation on Zoom using ${Apps}" | ${config.siteTitle}`}
+            title={`Activities for Virtual Facilitation on Zoom using ${Apps} | ${config.siteTitle}`}
           />
           <PostListing postEdges={postEdges} />
         </div>

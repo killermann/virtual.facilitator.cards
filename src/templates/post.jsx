@@ -1,6 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import Gravatar from "react-gravatar";
 import kebabCase from "lodash/kebabCase";
 import Layout from "../layout";
@@ -48,11 +48,11 @@ export default class PostTemplate extends React.Component {
                     Jump to:
                   </h2>
                   <ol className="font-black">
-                    {post.Gist && <li><a href="#gist">Gist</a></li>}
-                    {post.Steps && <li><a href="#step-by-step">Step-by-Step</a></li>}
-                    {post.Prep && <li><a href="#prep">Prep</a></li>}
-                    {post.Context && <li><a href="#context">Context</a></li>}
-                    {author && <li><a href="#author">Author</a></li>}
+                    {post.Gist && <li><Link to="#gist">Gist</Link></li>}
+                    {post.Steps && <li><Link to="#step-by-step">Step-by-Step</Link></li>}
+                    {post.Prep && <li><Link to="#prep">Prep</Link></li>}
+                    {post.Context && <li><Link to="#context">Context</Link></li>}
+                    {author && <li><Link to="#author">Author</Link></li>}
                   </ol>
                 </nav>
               </aside>
