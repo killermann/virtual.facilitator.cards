@@ -28,9 +28,7 @@ export default class PostTemplate extends React.Component {
     return (
       <Layout>
         <div>
-          <Helmet>
-            <title>{`${post.Title} | ${config.siteTitle}`}</title>
-          </Helmet>
+          <Helmet title={`${post.Title} | ${config.siteTitle}`} />
           <SEO postPath={slug} postNode={postNode} postSEO />
           <main className={post.For}>
             <header className="post-header p-8 text-white text-center">
