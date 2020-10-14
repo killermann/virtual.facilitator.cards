@@ -1,0 +1,23 @@
+// Disable Tilt.js for Certain Screens & Browsers
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	[data-tilt] {
+		transform: none !important;
+	}
+}
+
+@supports (-ms-ime-align:auto){
+	[data-tilt] {
+		transform: none !important;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	[data-tilt], .tilt, .aside .card {
+		transform: none !important;
+
+		.js-tilt-glare {
+			display:none;
+		}
+	}
+}

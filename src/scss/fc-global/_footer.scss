@@ -1,0 +1,166 @@
+#footer {
+    margin-top: 7.5vw;
+
+    h3.big {
+        margin: 1.5rem auto .2em;
+
+        & + p {
+            margin-top: 0;
+        }
+    }
+}
+
+#footer-cta {
+    flex-direction: column;
+    width: 100%;
+
+    @include mq('tablet'){
+        flex-direction:row;
+    }
+
+    .huge {
+        font-size:100px;
+        min-width: 140px;
+    }
+
+    .big {
+        margin:0;
+        text-align: center;
+
+        @include mq('tablet-wide'){
+            text-align: left;
+            padding-right:40px;
+        }
+    }
+
+    .orange-to-red {
+        flex-direction: column;
+        flex-grow: 1;
+        margin-bottom: -1px;
+
+        @include mq('tablet-wide'){
+            flex-direction: row;
+        }
+    }
+
+    .green-to-blue {
+        margin-bottom: -1px;
+    }
+
+    .button {
+        min-width: 200px;
+    }
+
+    .mailing-list {
+        input[type=email]{
+            background:hsla(0,0,100%,.95);
+        }
+    }
+}
+
+#by {
+    background:#E0E0E0;
+    position:relative;
+    color: $grey-900 !important;
+    @include mq('desktop'){
+        &:after {
+            display:block;
+            z-index:5;
+            position:absolute;
+            background-image:url('../img/doodles/fc-doodle-arrow-down-red.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            width:195px;
+            height:240px;
+            content:'';
+            bottom:-12vw;
+            left:50vw;
+        }
+    }
+}
+
+#uncopyright {
+    color: #E0E0E0;
+    a {
+        color: white;
+    }
+    @include mq('desktop'){
+        display:flex;
+        justify-content: space-between;
+
+        p {
+            margin: 0;
+        }
+
+        #card-license {
+            margin-top: calc(330px + .2vw);
+            padding-left:2em;
+            text-align:right;
+        }
+    }
+}
+
+#footer-menu {
+    background: hsla(177%, 10%, 6%, 1);
+    color: hsla(177%, 10%, 76%, 1);
+    font-size: 1.2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    ul {
+        list-style: none;
+        margin: 0;
+
+        li {
+            padding: 0;
+            margin-bottom: 1em;
+        }
+    }
+
+    a {
+        color: hsla(177%, 10%, 76%, 1);
+        border-bottom: .12em solid hsla(177%, 10%, 46%, 1);
+
+        &.teal {
+            color: $blue;
+            border-color: $blue;
+        }
+
+        &:hover {
+            border-color: white;
+        }
+    }
+}
+
+#benefit-corporation {
+    background: hsla(177%, 10%, 6%, 1);
+    color: hsla(177%, 10%, 76%, 1);
+    padding-top: 0;
+    margin-top: -2px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    p {
+        margin: 0;
+        
+        a {
+            color: #fff;
+            text-decoration: underline;
+        }
+    }
+    
+    
+
+    svg {
+        min-width: 80px;
+        margin: 0 1em 0 0;
+        background: hsla(177%, 10%, 12%, 1);
+
+        @include mq('tablet'){
+            min-width: 150px;
+            margin: 0 4vw 0 0;
+        }
+    }
+}

@@ -1,0 +1,140 @@
+
+.fci {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'Facilitator-Cards-Icons-Virtual' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  
+  /* Enable Ligatures ================ */
+  letter-spacing: 0;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  font-feature-settings: "liga";
+  -webkit-font-variant-ligatures: discretionary-ligatures;
+  font-variant-ligatures: discretionary-ligatures;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fci-mural:before {
+  content: "\e924";
+}
+.fci-ahaslides:before {
+  content: "\e91f";
+}
+.fci-google-docs:before {
+  content: "\e920";
+}
+.fci-google-drawings:before {
+  content: "\e921";
+}
+.fci-google-forms:before {
+  content: "\e922";
+}
+.fci-google-slides:before {
+  content: "\e923";
+}
+.fci-zoom:before {
+  content: "\e92b";
+}
+.fci-chevron-down:before {
+  content: "\e900";
+}
+.fci-chevron-left:before {
+  content: "\e901";
+}
+.fci-chevron-right:before {
+  content: "\e902";
+}
+.fci-chevron-up:before {
+  content: "\e903";
+}
+.fci-clarification:before {
+  content: "\e904";
+}
+.fci-close:before {
+  content: "\e905";
+}
+.fci-co-facilitation:before {
+  content: "\e906";
+}
+.fci-colored-paper:before {
+  content: "\e907";
+}
+.fci-custom:before {
+  content: "\e908";
+}
+.fci-emotion:before {
+  content: "\e909";
+}
+.fci-envelope:before {
+  content: "\e90a";
+}
+.fci-execution:before {
+  content: "\e90b";
+}
+.fci-facilitator-card:before {
+  content: "\e90c";
+}
+.fci-flipchart:before {
+  content: "\e90d";
+}
+.fci-full-group:before {
+  content: "\e90e";
+}
+.fci-hand:before {
+  content: "\e90f";
+}
+.fci-hat:before {
+  content: "\e910";
+}
+.fci-ideation:before {
+  content: "\e911";
+}
+.fci-index-cards:before {
+  content: "\e912";
+}
+.fci-individuals:before {
+  content: "\e913";
+}
+.fci-map:before {
+  content: "\e914";
+}
+.fci-markers:before {
+  content: "\e915";
+}
+.fci-none:before {
+  content: "\e916";
+}
+.fci-pairs:before {
+  content: "\e917";
+}
+.fci-paper:before {
+  content: "\e918";
+}
+.fci-play-doh:before {
+  content: "\e919";
+}
+.fci-reply:before {
+  content: "\e91a";
+}
+.fci-small-groups:before {
+  content: "\e91b";
+}
+.fci-sticky-notes:before {
+  content: "\e91c";
+}
+.fci-tape:before {
+  content: "\e91d";
+}
+.fci-writing-utensils:before {
+  content: "\e91e";
+}
