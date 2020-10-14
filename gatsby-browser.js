@@ -1,2 +1,2 @@
 const React = require("react")
-import "./src/css/global.scss"
+import "./src/scss/global.scss"
