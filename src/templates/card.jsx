@@ -3,7 +3,6 @@ import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../layout";
 import PostListing from "../components/PostListing/PostListing";
-import config from "../../data/SiteConfig";
 
 export default class CardTemplate extends React.Component {
   render() {
@@ -13,7 +12,7 @@ export default class CardTemplate extends React.Component {
       <Layout>
         <div className="Card-container">
           <Helmet
-            title={`${Card} Virtual Facilitation Activities | ${config.siteTitle}`}
+            title={`${Card} Virtual Facilitation Activities | Facilitator Cards`}
           />
           <PostListing postEdges={postEdges} />
         </div>
@@ -27,7 +26,7 @@ export const pageQuery = graphql`
   query CardPage($Card: String) {
     allAirtable(
       limit: 1000
-      filter: { data : { Card: { eq: $Card }, Status: {eq: "publish"} } }
+      filter: { data : { Card: { eq: $Card }, Status: {eq: "Publish"} } }
     ) {
       totalCount
       edges {
@@ -36,11 +35,21 @@ export const pageQuery = graphql`
             Title
             Card
             Slug
+            Name
+            For
+            Email
+            Apps
+            Status
             Author {
-              data { 
+              data {
                 First_Name
                 Last_Name
                 Author_Email
+                Author_Bio
+                LinkedIn
+                Instagram
+                Website
+                Twitter
               }
             }
             Gist {

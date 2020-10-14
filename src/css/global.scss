@@ -2,7 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+// Global Facilitator Cards Styles
+
+@import "../../../facilitator-cards-global/scss/variables";
+@import "../../../facilitator-cards-global/scss/mixins";
+@import "../../../facilitator-cards-global/scss/cards";
+
 @import url("https://use.typekit.net/ylq7fed.css");
+
+@import "../../../facilitator-cards-global/scss/fci";
+@font-face {
+  font-family: "Facilitator-Cards-Icons-Virtual";
+  src: url("../../static/fonts/facilitator-cards-icons/Facilitator-Cards-Icons-Virtual.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
 
 :root {
   --text-color:  #001e1d;
@@ -26,7 +41,8 @@ h1.theme-font, h2.theme-font, h3.theme-font, h4.theme-font, h5.theme-font {
 
 .emotion {
   .post-header, 
-  .react-gravatar {
+  .react-gravatar,
+  .submenu.active:before {
     @apply .bg-teal-500; 
   }
 
@@ -37,7 +53,8 @@ h1.theme-font, h2.theme-font, h3.theme-font, h4.theme-font, h5.theme-font {
 }
 .ideation {
   .post-header, 
-  .react-gravatar {
+  .react-gravatar,
+  .submenu.active:before {
     @apply .bg-green-500; 
   }
 
@@ -48,7 +65,8 @@ h1.theme-font, h2.theme-font, h3.theme-font, h4.theme-font, h5.theme-font {
 }
 .clarification {
   .post-header, 
-  .react-gravatar {
+  .react-gravatar,
+  .submenu.active:before {
     @apply .bg-yellow-500; 
   }
   .prose a { 
@@ -57,7 +75,8 @@ h1.theme-font, h2.theme-font, h3.theme-font, h4.theme-font, h5.theme-font {
 }
 .execution {
   .post-header, 
-  .react-gravatar { 
+  .react-gravatar,
+  .submenu.active:before { 
     @apply .bg-red-500;
   }
   .prose a {
@@ -89,6 +108,24 @@ h1.theme-font, h2.theme-font, h3.theme-font, h4.theme-font, h5.theme-font {
 .wrap {
   max-width: 1280px;
   margin: 0 auto;
+}
+
+.submenu.active {
+
+  @apply .font-black .relative;
+
+  &:before {
+    display: block;
+    position: absolute;
+    left: -.2em;
+    width: .4em;
+    height: .4em;
+    content:  '';
+    top: 50%;
+    margin-top: -.2em;
+
+    @apply .rounded .bg-gray-400;
+  }
 }
 
 @media only screen and (min-width: 768px) {

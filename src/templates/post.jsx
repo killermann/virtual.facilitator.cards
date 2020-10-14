@@ -7,7 +7,6 @@ import Layout from "../layout";
 import UserInfo from "../components/UserInfo/UserInfo";
 import Author from "../components/Author/Author"
 import PostTags from "../components/PostTags/PostTags";
-import SocialLinks from "../components/SocialLinks/SocialLinks";
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
 
@@ -28,18 +27,22 @@ export default class PostTemplate extends React.Component {
     return (
       <Layout>
         <div>
-          <Helmet title={`${post.Title} | ${config.siteTitle}`} />
-          <SEO postPath={slug} postNode={postNode} postSEO />
+          <Helmet>
+            <title>{`${post.Title} | ${config.siteTitle}`}</title>
+            <SEO postPath={slug} postNode={postNode} postSEO />
+          </Helmet>
           <main className={post.For}>
-            <header className="post-header p-8 text-white text-center">
+            <header className="post-header text-white text-center font-black theme-font">
+              <div class="wrap p-8 lg:py-12">
               <span className="app-icon zoom">Zoom</span>
-              { post.Apps && 
-                <span className={"app-icon " + kebabCase(post.Apps)}>
-                   + {post.Apps}
-                </span>
-              }
+                { post.Apps && 
+                  <span className={"app-icon " + kebabCase(post.Apps)}>
+                  &nbsp;+&nbsp;{post.Apps}
+                  </span>
+                }
+              </div>
             </header>
-            <article className="griddled wrap p-6 lg:p-12">
+            <article className="griddled wrap p-6 lg:p-12 bg-white">
               <aside className="sidebar hidden md:block">
                 <nav className="theme-font py-6 text-lg md:sticky md:top-0">
                   <h2 id="table-of-contents">

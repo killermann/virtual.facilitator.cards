@@ -124,7 +124,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const prevEdge = postsEdges[prevID];
 
     createPage({
-      path: edge.node.data.Slug,
+      path:edge.node.data.Slug,
       component: postPage,
       context: {
         dateFormat: siteConfig.dateFormat,

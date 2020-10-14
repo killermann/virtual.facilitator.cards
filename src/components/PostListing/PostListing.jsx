@@ -1,10 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
-import moment from 'moment';
-import siteConfig from "../../../data/SiteConfig";
 import Gravatar from "react-gravatar";
 import kebabCase from "lodash/kebabCase";
-
 
 class PostListing extends React.Component {
   getPostList() {
@@ -27,14 +24,15 @@ class PostListing extends React.Component {
   render() {
     const postList = this.getPostList();
     return (
-      <div className="grid grid-flow-row grid-cols-1 gap-8 p-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="grid grid-flow-row grid-cols-1 gap-8 p-8 sm:grid-cols-2">
         { postList.map(post => (
           <div key={post.title} className={"post-box rounded flex items-stretch shadow-xl overflow-hidden  hover:shadow-2xl transition duration-200 ease-out " + post.for}>
-            <Link className="flex flex-col justify-between items-stretch" to={post.path} key={post.title}>
+            <Link className="flex flex-col justify-between items-stretch" to={`/${post.path}`} key={post.title}>
               <div>
-                <header className="post-header p-6">
-                  <span className="app-icon zoom">Zoom</span>
-                  { post.apps && <span className={"app-icon " + kebabCase(post.apps)}> + {post.apps}</span>}
+                <header className="post-header py-6 px-2 theme-font text-white font-black text-center flex items-center text-3xl justify-center">
+                  <span className="fci">Zoom</span>
+                  { post.apps && <span>&nbsp;+&nbsp;</span> }
+                  { post.apps && <span className={"fci " + kebabCase(post.apps)}>{post.apps}</span>}
                 </header>
                 <section className="p-6 pb-4">
                   <h3 className="theme-font font-black text-xl mb-4">{post.title}</h3>
