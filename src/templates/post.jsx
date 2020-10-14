@@ -108,8 +108,6 @@ export default class PostTemplate extends React.Component {
   }
 }
 
-window.addEventListener('DOMContentLoaded', () => {
-
   const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
           const id = entry.target.getAttribute('id');
@@ -120,13 +118,13 @@ window.addEventListener('DOMContentLoaded', () => {
           }
       });
   });
+  
 
   // Track all sections that have an `id` applied
   document.querySelectorAll('section[id]').forEach((section) => {
       observer.observe(section);
   });
-  
-});
+ 
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
