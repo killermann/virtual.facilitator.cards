@@ -29,10 +29,10 @@ class PostListing extends React.Component {
           <div key={post.title} className={"post-box rounded flex items-stretch shadow-xl overflow-hidden  hover:shadow-2xl transition duration-200 ease-out " + post.for}>
             <Link className="flex flex-col justify-between items-stretch" to={`/${post.path}`} key={post.title}>
               <div>
-                <header className="post-header py-8 px-1 theme-font text-white font-black text-center flex flex-wrap leading-none items-center text-2xl lg:text-3xl justify-center">
-                  <span className="fci">Zoom</span>
+                <header className="post-header py-8 px-1 theme-font text-white font-black flex flex-wrap leading-none items-center text-2xl lg:text-3xl justify-center">
+                  <span className="fci fci-zoom"><span className="sr-only">Zoom</span></span>
                   { post.apps && <span>&nbsp;+&nbsp;</span> }
-                  { post.apps && <span className="fci">{post.apps}</span>}
+                  { post.apps && <span className={`fci fci-${kebabCase(post.apps)}`}><span className="sr-only">{post.apps}</span></span>}
                 </header>
                 <section className="p-6 pb-4">
                   <h3 className="theme-font font-black text-xl mb-4">{post.title}</h3>

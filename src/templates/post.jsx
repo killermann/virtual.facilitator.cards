@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from 'react'
 import Helmet from "react-helmet";
 import { graphql, Link } from "gatsby";
 import Gravatar from "react-gravatar";
@@ -34,9 +34,9 @@ export default class PostTemplate extends React.Component {
           <main className={post.For}>
             <header className="post-header text-white ">
               <div class="wrap p-8 lg:py-12 flex flex-wrap leading-none justify-center items-center font-black theme-font font-black text-3xl lg:text-4xl">
-                <span className="fci">Zoom</span>
+                <span className="fci fci-zoom"><span className="sr-only">Zoom</span></span>
                 { post.Apps && <span>&nbsp;+&nbsp;</span> }
-                { post.Apps && <Link title={post.Apps} className="fci" to={`/apps/${kebabCase(post.Apps)}`}>{post.Apps}</Link>}
+                { post.Apps && <span className={`fci fci-${kebabCase(post.Apps)}`}><span className="sr-only">{post.apps}</span></span>}
               </div>
             </header>
             <article className="griddled wrap p-6 lg:p-12 bg-white">
@@ -108,23 +108,26 @@ export default class PostTemplate extends React.Component {
   }
 }
 
-  const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-          const id = entry.target.getAttribute('id');
-          if (entry.intersectionRatio > 0) {
-              document.querySelector(`nav li a[href="#${id}"]`).classList.add('active');
-          } else {
-              document.querySelector(`nav li a[href="#${id}"]`).classList.remove('active');
-          }
-      });
-  });
-  
+// const observer = useRef();
 
-  // Track all sections that have an `id` applied
-  document.querySelectorAll('section[id]').forEach((section) => {
-      observer.observe(section);
-  });
- 
+// useEffect(() => {
+//   observer.current = new IntersectionObserver(entries => {
+//     entries.forEach(entry => {
+//         const id = entry.target.getAttribute('id');
+//         if (entry.intersectionRatio > 0) {
+//             document.querySelector(`nav li a[href="#${id}"]`).classList.add('active');
+//         } else {
+//             document.querySelector(`nav li a[href="#${id}"]`).classList.remove('active');
+//         }
+//     });
+
+//   });
+// }, [
+//   // Track all sections that have an `id` applied
+//   document.querySelectorAll('section[id]').forEach((section) => {
+//       observer.observe(section);
+//   })
+// ]);
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
