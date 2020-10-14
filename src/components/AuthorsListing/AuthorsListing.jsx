@@ -27,7 +27,7 @@ class AuthorsListing extends React.Component {
         { uniq.slice(0,1).map((post, i) => [
           <span key={post.authors} className={"" + post.authors}>
             {/* { (uniq.length > 2 && i === uniq.length - 1) ? ' & ' : ''} */}
-            { post.website ? <Link className="underline hover:text-black" to={post.website} key={post.authors}>{ post.authors}</Link> : <span>{post.authors}</span>}
+            { post.website ? <Link target="_blank" rel="noopener noreferrer" className="underline hover:text-black" to={post.website} key={post.authors}>{ post.authors}</Link> : <span>{post.authors}</span>}
             
             {/* { (uniq.length > 2 && i < uniq.length - 1) ? ', ' : ''}
             { (uniq.length === 2 && i < uniq.length - 1) && ' & ' } */}

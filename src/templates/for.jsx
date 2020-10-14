@@ -31,10 +31,10 @@ export default class ForTemplate extends React.Component {
                 <div className="rounded bg-gray-200 mt-6 p-6 mb-4 md:my-0 md:fixed md:mr-8 theme-font">
                   <h3 className="text-center mb-2">Activities for:</h3>
                   <ul className="text-lg flex justify-center flex-wrap flex-grow leading-none">
-                    <li><Link className="p-2 block mr-2" activeClassName="active submenu" to={'/for/emotion'}>Emotion</Link></li>
-                    <li><Link className="p-2 block mr-2" activeClassName="active submenu" to={'/for/ideation'}>Ideation</Link></li>
-                    <li><Link className="p-2 block mr-2" activeClassName="active submenu" to={'/for/clarification'}>Clarification</Link></li>
-                    <li><Link className="p-2 block mr-2" activeClassName="active submenu" to={'/for/execution'}>Execution</Link></li>
+                    <li><Link className="submenu p-2 block mr-2" activeClassName="active" to={'/for/emotion'}>Emotion</Link></li>
+                    <li><Link className="submenu p-2 block mr-2" activeClassName="active" to={'/for/ideation'}>Ideation</Link></li>
+                    <li><Link className="submenu p-2 block mr-2" activeClassName="active" to={'/for/clarification'}>Clarification</Link></li>
+                    <li><Link className="submenu p-2 block mr-2" activeClassName="active" to={'/for/execution'}>Execution</Link></li>
                   </ul>
                 </div>
               </aside>

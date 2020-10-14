@@ -32,28 +32,25 @@ export default class PostTemplate extends React.Component {
             <SEO postPath={slug} postNode={postNode} postSEO />
           </Helmet>
           <main className={post.For}>
-            <header className="post-header text-white text-center font-black theme-font">
-              <div class="wrap p-8 lg:py-12">
-              <span className="app-icon zoom">Zoom</span>
-                { post.Apps && 
-                  <span className={"app-icon " + kebabCase(post.Apps)}>
-                  &nbsp;+&nbsp;{post.Apps}
-                  </span>
-                }
+            <header className="post-header text-white ">
+              <div class="wrap p-8 lg:py-12 flex flex-wrap leading-none justify-center items-center font-black theme-font font-black text-3xl lg:text-4xl">
+                <span className="fci">Zoom</span>
+                { post.Apps && <span>&nbsp;+&nbsp;</span> }
+                { post.Apps && <Link title={post.Apps} className="fci" to={`/apps/${kebabCase(post.Apps)}`}>{post.Apps}</Link>}
               </div>
             </header>
             <article className="griddled wrap p-6 lg:p-12 bg-white">
               <aside className="sidebar hidden md:block">
-                <nav className="theme-font py-6 text-lg md:sticky md:top-0">
-                  <h2 id="table-of-contents">
-                    Jump to:
+                <nav className="theme-font py-6 text-lg md:sticky md:top-0 leading-none">
+                  <h2 className="p-2" id="table-of-contents">
+                    Contents:
                   </h2>
                   <ol className="font-black">
-                    {post.Gist && <li><Link to="#gist">Gist</Link></li>}
-                    {post.Steps && <li><Link to="#step-by-step">Step-by-Step</Link></li>}
-                    {post.Prep && <li><Link to="#prep">Prep</Link></li>}
-                    {post.Context && <li><Link to="#context">Context</Link></li>}
-                    {author && <li><Link to="#author">Author</Link></li>}
+                    {post.Gist && <li><a className="submenu p-2 block" href="#gist">Gist</a ></li>}
+                    {post.Steps && <li><a className="submenu p-2 block" href="#step-by-step">Step-by-Step</a  ></li>}
+                    {post.Prep && <li><a className="submenu p-2 block" href="#prep">Prep</a ></li>}
+                    {post.Context && <li><a className="submenu p-2 block" href="#context">Context</a  ></li>}
+                    {author && <li><a className="submenu p-2 block" href="#author">Author</a  ></li>}
                   </ol>
                 </nav>
               </aside>
@@ -111,6 +108,26 @@ export default class PostTemplate extends React.Component {
   }
 }
 
+window.addEventListener('DOMContentLoaded', () => {
+
+  const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+          const id = entry.target.getAttribute('id');
+          if (entry.intersectionRatio > 0) {
+              document.querySelector(`nav li a[href="#${id}"]`).classList.add('active');
+          } else {
+              document.querySelector(`nav li a[href="#${id}"]`).classList.remove('active');
+          }
+      });
+  });
+
+  // Track all sections that have an `id` applied
+  document.querySelectorAll('section[id]').forEach((section) => {
+      observer.observe(section);
+  });
+  
+});
+
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -121,6 +138,7 @@ export const pageQuery = graphql`
         Name
         Email
         Apps
+        Slug
         Author {
           data {
             First_Name
