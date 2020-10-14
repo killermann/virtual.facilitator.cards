@@ -4,13 +4,13 @@
 
 // Global Facilitator Cards Styles
 
-@import "fc-global/scss/variables";
-@import "fc-global/scss/mixins";
-@import "fc-global/scss/cards";
+@import "/fc-global/variables";
+@import "/fc-global/mixins";
+@import "/fc-global/cards";
 
 @import url("https://use.typekit.net/ylq7fed.css");
 
-@import "fc-global/scss/fci";
+@import "/fc-global/fci";
 @font-face {
   font-family: "Facilitator-Cards-Icons-Virtual";
   src: url("../../static/fonts/facilitator-cards-icons/Facilitator-Cards-Icons-Virtual.woff") format("woff");
