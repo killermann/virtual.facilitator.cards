@@ -17,10 +17,10 @@ export default class ForTemplate extends React.Component {
           <Helmet
             title={`Virtual Activities for Facilitating ${toLaxTitleCase(For)} Processes | Facilitator Cards`}
           />
-          <header className="tax-header bg-gray-100 lg:mb-4">
-            <div className="wrap p-8 lg:py-12 griddled">
+          <header className="tax-header bg-gray-100">
+            <div className="wrap lg:py-12 griddled">
               <div>
-                <h1 className="theme-font text-3xl lg:text-4xl font-black mb-6">
+                <h1 className="page-title mb-6">
                   Virtual Activities for Facilitating <span>{toLaxTitleCase(For)}</span> Processes
                 </h1>
                 <p className="text-lg theme-font lg:text-xl">
@@ -40,7 +40,7 @@ export default class ForTemplate extends React.Component {
               </aside>
             </div>
           </header>
-          <main class="wrap griddled">
+          <main class="wrap griddled pt-6 lg:pt-12">
             <PostListing postEdges={postEdges} />
           </main>
         </div>

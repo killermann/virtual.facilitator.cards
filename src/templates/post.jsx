@@ -36,7 +36,8 @@ export default class PostTemplate extends React.Component {
               <div class="wrap p-8 lg:py-12 flex flex-wrap leading-none justify-center items-center font-black theme-font font-black text-3xl lg:text-4xl">
                 <span className="fci fci-zoom"><span className="sr-only">Zoom</span></span>
                 { post.Apps && <span>&nbsp;+&nbsp;</span> }
-                { post.Apps && <span className={`fci fci-${kebabCase(post.Apps)}`}><span className="sr-only">{post.apps}</span></span>}
+                { post.Apps && 
+                <Link title={post.Apps} to={`/apps/${kebabCase(post.Apps)}`} className={`hover:opacity-75 fci fci-${kebabCase(post.Apps)}`} style={{ color: '#fff' }}><span className="sr-only">{post.apps}</span></Link>}
               </div>
             </header>
             <article className="griddled wrap p-6 lg:p-12 bg-white">
@@ -55,7 +56,7 @@ export default class PostTemplate extends React.Component {
                 </nav>
               </aside>
               <div className="primary lg:pr-6">
-                <h1 className="theme-font text-3xl lg:text-4xl font-black">
+                <h1 className="page-title">
                   {post.Title}
                 </h1>
                 <div className="byline my-6">
@@ -68,21 +69,21 @@ export default class PostTemplate extends React.Component {
                 
                 {post.Steps && 
                   <section className="mt-12" id="step-by-step">
-                    <h2 className="theme-font text-2xl lg:text-3xl font-black mb-2">Step-by-Step Instructions</h2>
+                    <h2 className="theme-font text-xl md:text-2xl lg:text-3xl font-black mb-2">Step-by-Step Instructions</h2>
                     <div className="bg-gray-100 prose rounded p-6 md:p-8 lg:p-10" dangerouslySetInnerHTML={{ __html: post.Steps.childMarkdownRemark.html }} />
                   </section>
                 }
 
                 {post.Prep && 
                   <section className="mt-12" id="prep">
-                    <h2 className="theme-font text-2xl lg:text-3xl font-black mb-2">Prep</h2>
+                    <h2 className="theme-font text-xl md:text-2xl lg:text-3xl font-black mb-2">Prep</h2>
                     <div className="bg-gray-100 prose rounded p-6 md:p-8 lg:p-10" dangerouslySetInnerHTML={{ __html: post.Prep.childMarkdownRemark.html }} />
                   </section>
                 }
                 
                 {post.Context && 
                   <section className="mt-12" id="context">
-                    <h2 className="theme-font text-2xl lg:text-3xl font-black mb-2">Context</h2>
+                    <h2 className="theme-font text-xl md:text-2xl lg:text-3xl font-black mb-2">Context</h2>
                     <div className="bg-gray-100 prose rounded p-6 md:p-8 lg:p-10" dangerouslySetInnerHTML={{ __html: post.Context.childMarkdownRemark.html }} />
                   </section>
                 }
@@ -95,7 +96,7 @@ export default class PostTemplate extends React.Component {
                 {author && <UserInfo author={author} />}
                 {author &&
                   <section className="mt-12" id="author">
-                    <h2 className="theme-font text-2xl lg:text-3xl font-black mb-2">Author</h2>
+                    <h2 className="theme-font text-xl md:text-2xl lg:text-3xl font-black mb-2">Author</h2>
                     <Author post={post} />
                   </section>
                 }
@@ -136,6 +137,10 @@ export const pageQuery = graphql`
       data {
         Title
         For
+        Prop_1
+        Prop_2
+        Prop_3
+        Explanation
         Name
         Email
         Apps

@@ -23,8 +23,12 @@
   --text-color:  #001e1d;
 }
 
+.text-color-default {
+  color: var(--text-color);
+}
+
 html {
-  scroll-behavior: smooth;
+  // scroll-behavior: smooth;
 }
 
 body {
@@ -39,75 +43,76 @@ h1.theme-font, h2.theme-font, h3.theme-font, h4.theme-font, h5.theme-font {
   line-height: 1.1;
 }
 
-.emotion {
-  .post-header, 
-  .react-gravatar,
-  .submenu.active:before {
-    @apply .bg-teal-500; 
-  }
-
-  .prose a { 
-    @apply .border-teal-500; 
-  }
-
+.logo {
+  background-image: url('../../src/img/virtual-facilitator-cards-logo-72h.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 241px;
+  height: 48px;
+  display: block;
+  text-indent: -99999px;
 }
-.ideation {
-  .post-header, 
-  .react-gravatar,
-  .submenu.active:before {
-    @apply .bg-green-500; 
-  }
 
-  .prose a { 
-    @apply .border-green-500; 
-  }
+// Components
 
-}
-.clarification {
-  .post-header, 
-  .react-gravatar,
-  .submenu.active:before {
-    @apply .bg-yellow-500; 
-  }
-  .prose a { 
-    @apply .border-yellow-500; 
+.btn {
+  @apply .text-gray-900 .p-4 .rounded-sm .theme-font .font-black .leading-none .bg-gradient-to-br .from-gray-100 .to-gray-200;
+
+  &:hover, &:focus {
+    @apply .from-gray-200 .to-gray-100 .shadow-outline;
   }
 }
-.execution {
-  .post-header, 
-  .react-gravatar,
-  .submenu.active:before { 
-    @apply .bg-red-500;
+
+.page-title {
+  @apply .theme-font .text-2xl .font-black .leading-none;
+
+  @screen md {
+    @apply .text-3xl;
   }
-  .prose a {
-    @apply .border-red-500;
+
+  @screen lg {
+    @apply .text-4xl;
   }
 }
 
 .prose {
-  font-size: 18px;
-}
+  font-size: 16px;
 
-.prose p + p {
-  @apply .mt-4;
-}
+  @screen md {
+    font-size: 18px;
+  }
 
-.prose a {
-  border-bottom-width: .125em;
-  border-style: solid;
-}
+  @screen lg {
+    font-size: 21px;
+  }
 
-.prose a:hover {
-  color: #000;
-}
+  p + p {
+    @apply .mt-4;
+  }
 
-.prose li + li {
-  @apply .mt-4;
+  a {
+    border-bottom-width: .125em;
+    border-style: solid;
+  }
+
+  a:hover, a:focus {
+    color: #000;
+  }
+
+  li + li {
+    @apply .mt-4;
+  }
 }
 
 .wrap {
   max-width: 1280px;
   margin: 0 auto;
+  @apply .px-6;
+
+  @screen lg {
+    @apply .px-12
+  }
 }
 
 .submenu.active {
@@ -142,8 +147,66 @@ h1.theme-font, h2.theme-font, h3.theme-font, h4.theme-font, h5.theme-font {
   .sidebar { grid-area: sidebar; }
 }
 
-@media only screen and (min-width: 1280px) {
-  .prose {
-    font-size: 21px;
+// FOR COLORS
+
+
+.emotion {
+  .post-header, 
+  .react-gravatar,
+  .submenu.active:before {
+    @apply .bg-teal-500; 
+  }
+
+  .prose a { 
+    @apply .border-teal-500; 
+  }
+
+  a:hover, a:focus {
+    @apply .text-teal-500;
+  }
+
+}
+.ideation {
+  .post-header, 
+  .react-gravatar,
+  .submenu.active:before {
+    @apply .bg-green-500; 
+  }
+
+  .prose a { 
+    @apply .border-green-500; 
+  }
+
+  a:hover, a:focus {
+    @apply .text-green-500;
+  }
+
+}
+.clarification {
+  .post-header, 
+  .react-gravatar,
+  .submenu.active:before {
+    @apply .bg-yellow-500; 
+  }
+  .prose a { 
+    @apply .border-yellow-500; 
+  }
+
+  a:hover, a:focus {
+    @apply .text-yellow-500;
+  }
+}
+.execution {
+  .post-header, 
+  .react-gravatar,
+  .submenu.active:before { 
+    @apply .bg-red-500;
+  }
+  .prose a {
+    @apply .border-red-500;
+  }
+
+  a:hover, a:focus {
+    @apply .text-red-500;
   }
 }
