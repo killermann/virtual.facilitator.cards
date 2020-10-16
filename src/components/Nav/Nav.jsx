@@ -11,7 +11,7 @@ class Nav extends Component {
           <div className="flex items-center">
             <div className="relative mr-4">
               <select 
-              className="block appearance-none w-full bg-white border-2 border-gray-200 theme-font font-black text-sm md:text-base lg:text-lg py-3 px-4 pr-8 rounded-sm leading-tight focus:outline-none focus:bg-white focus:border-teal-500"
+              className="block appearance-none w-full bg-white border-2 border-gray-200 theme-font font-black text-sm md:text-base lg:text-lg py-3 px-4 pr-8 rounded-sm leading-none focus:outline-none focus:bg-white focus:border-teal-500"
               onChange={(ev) => {
                 const newPath =
                   `/processes/${kebabCase(ev.target.value)}`;
@@ -86,6 +86,7 @@ class Nav extends Component {
                 <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
               </div>
             </div>
+            <a className="btn btn-cta text-sm md:text-base lg:text-lg" href="https://airtable.com/shrLdKbYqRPR6ssaL" target="_blank" rel="noopener noreferrer">Submit Activity</a>
           </div>
         </div>
       </header>

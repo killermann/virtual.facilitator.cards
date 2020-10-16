@@ -57,10 +57,18 @@ h1.theme-font, h2.theme-font, h3.theme-font, h4.theme-font, h5.theme-font {
 // Components
 
 .btn {
-  @apply .text-gray-900 .p-4 .rounded-sm .theme-font .font-black .leading-none .bg-gradient-to-br .from-gray-100 .to-gray-200;
+  @apply .text-gray-900 .py-3 .px-4 .rounded-sm .theme-font .font-black .leading-none .bg-gradient-to-br .from-gray-100 .to-gray-200;
 
   &:hover, &:focus {
     @apply .from-gray-200 .to-gray-100 .shadow-outline;
+  }
+}
+
+.btn-cta {
+  @apply .from-yellow-500 .to-red-500;
+
+  &:hover, &:focus {
+    @apply .from-red-500 .to-yellow-500 .shadow-outline;
   }
 }
 
