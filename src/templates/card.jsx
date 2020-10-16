@@ -12,13 +12,12 @@ export default class CardTemplate extends React.Component {
     const { Card } = this.props.pageContext;
     const postEdges = this.props.data.allAirtable.edges;
     return (
+      
       <Layout>
+        <Helmet title={`${Card} Virtual Facilitation Activities | Facilitator Cards`} />
         <div className={Card}>
-          <Helmet
-            title={`${Card} Virtual Facilitation Activities | Facilitator Cards`}
-          />
           <header className="tax-header bg-gray-100">
-            <div className="wrap lg:py-12 griddled">
+            <div className="wrap py-8 lg:py-12 griddled">
               <div>
                 <h1 className="page-title mb-6">
                   <span>{toLaxTitleCase(Card)}</span> Virtual Facilitation Activities
@@ -28,9 +27,6 @@ export default class CardTemplate extends React.Component {
                 </p>
               </div>
               <aside className="relative">
-                <div className="rounded mt-6 p-6 mb-4 md:my-0 md:fixed md:mr-8 theme-font">
-                  
-                </div>
               </aside>
             </div>
           </header>

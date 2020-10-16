@@ -69,7 +69,7 @@ h1.theme-font, h2.theme-font, h3.theme-font, h4.theme-font, h5.theme-font {
   @apply .from-yellow-500 .to-red-500 .text-red-900;
 
   &:hover, &:focus {
-    @apply  .text-yellow-900;
+    @apply  .from-yellow-400 .text-yellow-900;
   }
 }
 

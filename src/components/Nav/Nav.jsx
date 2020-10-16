@@ -6,12 +6,12 @@ class Nav extends Component {
   render() {
     return (
       <header id="masthead" className="header shadow-md relative">
-        <div className="wrap flex justify-between items-center py-4 lg:py-6">
-          <Link className="logo" to={'/'} title="Go Home">Home</Link>
-          <div className="flex items-center">
+        <div className="wrap flex flex-wrap justify-center md:justify-between items-center">
+          <Link className="logo m-2 md:m-4 md:ml-0" to={'/'} title="Go Home">Home</Link>
+          <div className="flex m-2 md:m-0 items-center">
             <div className="relative mr-4">
               <select 
-              className="block appearance-none w-full bg-white border-2 border-gray-200 theme-font font-black text-sm md:text-base lg:text-lg py-3 px-4 pr-8 rounded-sm leading-none focus:outline-none focus:bg-white focus:border-teal-500"
+              className="block appearance-none w-full bg-white border-2 border-gray-200 theme-font font-black lg:text-lg py-3 px-4 pr-8 rounded-sm leading-none focus:outline-none focus:bg-white focus:border-teal-500"
               onChange={(ev) => {
                 const newPath =
                   `/processes/${kebabCase(ev.target.value)}`;

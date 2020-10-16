@@ -22,7 +22,7 @@ class Index extends React.Component {
                 Virtual Facilitator Cards Facilitation Guide
               </h1>
               <div className="bg-gray-100 p-6 mb-6 lg:mb-8 rounded prose">
-                👋 &nbsp;&nbsp;Hi friend! Welcome to your new hub for activities for easy, creative virtual facilitation on Zoom! Quick heads up: <strong>this app is still in super-duper-beta</strong>. (We really leaned into the <a href="https://www.facilitator.cards/cards/whats-the-mvp/" target="_blank" rel="noopener noreferrer">What's the MVP?</a> process, and decided it was <a href="https://www.facilitator.cards/cards/urgent-vs-important-grid/" target="_blank" rel="noopener noreferrer">Important <em>and</em> Urgent</a> to get this out to you now, even though it's not done.) 
+                👋 &nbsp;&nbsp;Hi friend! Welcome to your new source of activities for easy, creative virtual facilitation on Zoom! Quick heads up: <strong>this app is still in super-duper-beta</strong>. (We really leaned into the <a href="https://www.facilitator.cards/cards/whats-the-mvp/" target="_blank" rel="noopener noreferrer">What's the MVP?</a> process, and decided it was <a href="https://www.facilitator.cards/cards/urgent-vs-important-grid/" target="_blank" rel="noopener noreferrer">Important <em>and</em> Urgent</a> to get this out to you now, even though it's not done.) 
               </div>
             </div>
             <div className="flex flex-wrap md:flex-col text-base">
