@@ -57,18 +57,19 @@ h1.theme-font, h2.theme-font, h3.theme-font, h4.theme-font, h5.theme-font {
 // Components
 
 .btn {
-  @apply .text-gray-900 .py-3 .px-4 .rounded-sm .theme-font .font-black .leading-none .bg-gradient-to-br .from-gray-100 .to-gray-200;
+  @apply .text-gray-900 .py-3 .px-4 .rounded-sm .theme-font .font-black .leading-none .bg-gradient-to-br .from-gray-100 .to-gray-200 .transform .transition .duration-100 .ease-out;
 
   &:hover, &:focus {
-    @apply .from-gray-200 .to-gray-100 .shadow-outline;
+    @apply .bg-gradient-to-b .-translate-y-1 .scale-105;
+    box-shadow: 0px .25rem .2rem -.1rem rgba(10,10,20,.4);
   }
 }
 
 .btn-cta {
-  @apply .from-yellow-500 .to-red-500;
+  @apply .from-yellow-500 .to-red-500 .text-red-900;
 
   &:hover, &:focus {
-    @apply .from-red-500 .to-yellow-500 .shadow-outline;
+    @apply  .text-yellow-900;
   }
 }
 

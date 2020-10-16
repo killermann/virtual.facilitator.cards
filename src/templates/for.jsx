@@ -18,7 +18,7 @@ export default class ForTemplate extends React.Component {
             title={`Virtual Activities for Facilitating ${toLaxTitleCase(For)} Processes | Facilitator Cards`}
           />
           <header className="tax-header bg-gray-100">
-            <div className="wrap lg:py-12 griddled">
+            <div className="wrap py-8 lg:py-12 griddled">
               <div>
                 <h1 className="page-title mb-6">
                   Virtual Activities for Facilitating <span>{toLaxTitleCase(For)}</span> Processes
