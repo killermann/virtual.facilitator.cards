@@ -51,6 +51,7 @@ export default class PostTemplate extends React.Component {
                     {post.Steps && <li><a className="submenu p-2 block" href="#step-by-step">Step-by-Step</a  ></li>}
                     {post.Prep && <li><a className="submenu p-2 block" href="#prep">Prep</a ></li>}
                     {post.Context && <li><a className="submenu p-2 block" href="#context">Context</a  ></li>}
+                    {post.Additional_Resources && <li><a className="submenu p-2 block" href="#resources">Resources</a></li>}
                     {author && <li><a className="submenu p-2 block" href="#author">Author</a  ></li>}
                   </ol>
                 </nav>
@@ -88,7 +89,76 @@ export default class PostTemplate extends React.Component {
                   </section>
                 }
 
-                
+                {post.Additional_Resources && 
+                  <section className="mt-12" id="resources">
+                    <h2 className="theme-font text-xl md:text-2xl lg:text-3xl font-black mb-2">Additional Resources</h2>
+                    <div className="bg-gray-100 prose rounded p-6 md:p-8 lg:p-10">
+                      {(post.YouTube || post.Screencast || post.Other_Resource_Link) && <div className="mb-6 md:mb-8 lg:mb-10">
+                        <h3 className="theme-font text-lg md:text-xl font-black mb-4">For More Info:</h3>
+                        {post.YouTube && 
+                          <p>
+                            <strong className="mr-2"><span className="text-gray-700 fci inline-block w-8 text-center"><svg aria-hidden="true" focusable="false" className="w-6" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M314.222 197.78c51.091 51.091 54.377 132.287 9.75 187.16-6.242 7.73-2.784 3.865-84.94 86.02-54.696 54.696-143.266 54.745-197.99 0-54.711-54.69-54.734-143.255 0-197.99 32.773-32.773 51.835-51.899 63.409-63.457 7.463-7.452 20.331-2.354 20.486 8.192a173.31 173.31 0 0 0 4.746 37.828c.966 4.029-.272 8.269-3.202 11.198L80.632 312.57c-32.755 32.775-32.887 85.892 0 118.8 32.775 32.755 85.892 32.887 118.8 0l75.19-75.2c32.718-32.725 32.777-86.013 0-118.79a83.722 83.722 0 0 0-22.814-16.229c-4.623-2.233-7.182-7.25-6.561-12.346 1.356-11.122 6.296-21.885 14.815-30.405l4.375-4.375c3.625-3.626 9.177-4.594 13.76-2.294 12.999 6.524 25.187 15.211 36.025 26.049zM470.958 41.04c-54.724-54.745-143.294-54.696-197.99 0-82.156 82.156-78.698 78.29-84.94 86.02-44.627 54.873-41.341 136.069 9.75 187.16 10.838 10.838 23.026 19.525 36.025 26.049 4.582 2.3 10.134 1.331 13.76-2.294l4.375-4.375c8.52-8.519 13.459-19.283 14.815-30.405.621-5.096-1.938-10.113-6.561-12.346a83.706 83.706 0 0 1-22.814-16.229c-32.777-32.777-32.718-86.065 0-118.79l75.19-75.2c32.908-32.887 86.025-32.755 118.8 0 32.887 32.908 32.755 86.025 0 118.8l-45.848 45.84c-2.93 2.929-4.168 7.169-3.202 11.198a173.31 173.31 0 0 1 4.746 37.828c.155 10.546 13.023 15.644 20.486 8.192 11.574-11.558 30.636-30.684 63.409-63.457 54.733-54.735 54.71-143.3-.001-197.991z"></path></svg></span><a href={post.YouTube} title="YouTube Video Explanation" target="_blank" rel="noopener noreferrer">Youtube Video Walkthrough</a></strong>
+                          </p>
+                          }
+                          {post.Screencast && 
+                          <p>
+                            <strong className="mr-2"><span className="text-gray-700 fci inline-block w-8 text-center"><svg aria-hidden="true" focusable="false" className="w-6" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M314.222 197.78c51.091 51.091 54.377 132.287 9.75 187.16-6.242 7.73-2.784 3.865-84.94 86.02-54.696 54.696-143.266 54.745-197.99 0-54.711-54.69-54.734-143.255 0-197.99 32.773-32.773 51.835-51.899 63.409-63.457 7.463-7.452 20.331-2.354 20.486 8.192a173.31 173.31 0 0 0 4.746 37.828c.966 4.029-.272 8.269-3.202 11.198L80.632 312.57c-32.755 32.775-32.887 85.892 0 118.8 32.775 32.755 85.892 32.887 118.8 0l75.19-75.2c32.718-32.725 32.777-86.013 0-118.79a83.722 83.722 0 0 0-22.814-16.229c-4.623-2.233-7.182-7.25-6.561-12.346 1.356-11.122 6.296-21.885 14.815-30.405l4.375-4.375c3.625-3.626 9.177-4.594 13.76-2.294 12.999 6.524 25.187 15.211 36.025 26.049zM470.958 41.04c-54.724-54.745-143.294-54.696-197.99 0-82.156 82.156-78.698 78.29-84.94 86.02-44.627 54.873-41.341 136.069 9.75 187.16 10.838 10.838 23.026 19.525 36.025 26.049 4.582 2.3 10.134 1.331 13.76-2.294l4.375-4.375c8.52-8.519 13.459-19.283 14.815-30.405.621-5.096-1.938-10.113-6.561-12.346a83.706 83.706 0 0 1-22.814-16.229c-32.777-32.777-32.718-86.065 0-118.79l75.19-75.2c32.908-32.887 86.025-32.755 118.8 0 32.887 32.908 32.755 86.025 0 118.8l-45.848 45.84c-2.93 2.929-4.168 7.169-3.202 11.198a173.31 173.31 0 0 1 4.746 37.828c.155 10.546 13.023 15.644 20.486 8.192 11.574-11.558 30.636-30.684 63.409-63.457 54.733-54.735 54.71-143.3-.001-197.991z"></path></svg></span><a href={post.Screencast} title="Screencast of Process" target="_blank" rel="noopener noreferrer">Screencast of Process</a></strong>
+                          </p>
+                          }
+                           {post.Other_Resource_Link && 
+                            <p>
+                              <strong className="mr-2"><span className="text-gray-700 fci inline-block w-8 text-center"><svg aria-hidden="true" focusable="false" className="w-6" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M314.222 197.78c51.091 51.091 54.377 132.287 9.75 187.16-6.242 7.73-2.784 3.865-84.94 86.02-54.696 54.696-143.266 54.745-197.99 0-54.711-54.69-54.734-143.255 0-197.99 32.773-32.773 51.835-51.899 63.409-63.457 7.463-7.452 20.331-2.354 20.486 8.192a173.31 173.31 0 0 0 4.746 37.828c.966 4.029-.272 8.269-3.202 11.198L80.632 312.57c-32.755 32.775-32.887 85.892 0 118.8 32.775 32.755 85.892 32.887 118.8 0l75.19-75.2c32.718-32.725 32.777-86.013 0-118.79a83.722 83.722 0 0 0-22.814-16.229c-4.623-2.233-7.182-7.25-6.561-12.346 1.356-11.122 6.296-21.885 14.815-30.405l4.375-4.375c3.625-3.626 9.177-4.594 13.76-2.294 12.999 6.524 25.187 15.211 36.025 26.049zM470.958 41.04c-54.724-54.745-143.294-54.696-197.99 0-82.156 82.156-78.698 78.29-84.94 86.02-44.627 54.873-41.341 136.069 9.75 187.16 10.838 10.838 23.026 19.525 36.025 26.049 4.582 2.3 10.134 1.331 13.76-2.294l4.375-4.375c8.52-8.519 13.459-19.283 14.815-30.405.621-5.096-1.938-10.113-6.561-12.346a83.706 83.706 0 0 1-22.814-16.229c-32.777-32.777-32.718-86.065 0-118.79l75.19-75.2c32.908-32.887 86.025-32.755 118.8 0 32.887 32.908 32.755 86.025 0 118.8l-45.848 45.84c-2.93 2.929-4.168 7.169-3.202 11.198a173.31 173.31 0 0 1 4.746 37.828c.155 10.546 13.023 15.644 20.486 8.192 11.574-11.558 30.636-30.684 63.409-63.457 54.733-54.735 54.71-143.3-.001-197.991z"></path></svg></span><a href={post.Other_Resource_Link} title={post.Other_Resource_Name} target="_blank" rel="noopener noreferrer">{post.Other_Resource_Name}</a></strong>
+                            </p>
+                            }
+                      </div>}
+                       {post.Type_of_Template && 
+                        <div id="templates">
+                          <h3 className="theme-font text-lg md:text-xl font-black mb-4">Reusable Template:</h3>
+                          <div className="prose">
+                            {post.Mural && 
+                            <p>
+                              <strong className="mr-2"><span className="text-gray-700 fci fci-mural inline-block w-8 text-center"></span>MURAL:</strong>
+                              <a href={post.Mural} title="Mural template link" target="_blank" rel="noopener noreferrer">Click to copy MURAL template</a>
+                            </p>
+                            }
+                            {post.Slides && 
+                            <p>
+                              <strong className="mr-2"><span className="text-gray-700 fci fci-google-slides  inline-block w-8 text-center"></span>Google Slides:</strong>
+                              <a href={post.Slides} title="Slides template link" target="_blank" rel="noopener noreferrer">Click to copy Google Slides template</a>
+                            </p>
+                            }
+                            {post.Docs && 
+                            <p>
+                              <strong className="mr-2"><span className="text-gray-700 fci fci-google-docs inline-block w-8 text-center"></span>Google Docs:</strong>
+                              <a href={post.Docs} title="Docs template link" target="_blank" rel="noopener noreferrer">Click to copy Google Docs template</a>
+                            </p>
+                            }
+                            {post.Forms && 
+                            <p>
+                              <strong className="mr-2"><span className="text-gray-700 fci fci-google-docs inline-block w-8 text-center"></span>Google Forms:</strong>
+                              <a href={post.Forms} title="Forms template link" target="_blank" rel="noopener noreferrer">Click to copy Google Forms template</a>
+                            </p>
+                            }
+                            {post.Drawings && 
+                            <p>
+                              <strong className="mr-2"><span className="text-gray-700 fci fci-google-drawings inline-block w-8 text-center"></span>Google Drawings:</strong>
+                              <a href={post.Drawings} title="Drawings template link" target="_blank" rel="noopener noreferrer">Click to copy Google Drawings template</a>
+                            </p>
+                            }
+                            {post.Other_Template_Link && 
+                            <p>
+                              <strong className="mr-2"><span className="text-gray-700 fci fci-custom inline-block w-8 text-center"></span>{post.Other_Template_Name}:</strong>
+                              <a href={post.Other_Template_Link} title="Docs template link" target="_blank" rel="noopener noreferrer">Click to download template</a>
+                            </p>
+                            }
+                          </div>
+                        </div>
+                      }
+                    </div>
+                  </section>
+                }
+
+
                 <div className="post-meta">
                   <PostTags tags={post.tags} />
                   {/* <SocialLinks postPath={slug} postNode={postNode} /> */}
@@ -178,6 +248,19 @@ export const pageQuery = graphql`
             html
           }
         }
+        Additional_Resources
+        Type_of_Template
+        Slides
+        Drawings
+        Forms
+        Docs
+        Mural
+        Other_Template_Name
+        Other_Template_Link
+        Other_Resource_Name
+        Other_Resource_Link
+        Screencast
+        YouTube
       }
     }
   }

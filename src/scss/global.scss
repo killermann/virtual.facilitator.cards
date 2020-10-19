@@ -107,6 +107,7 @@ h1.theme-font, h2.theme-font, h3.theme-font, h4.theme-font, h5.theme-font {
 
   a:hover, a:focus {
     color: #000;
+    border-color: var(--text-color);
   }
 
   li + li {

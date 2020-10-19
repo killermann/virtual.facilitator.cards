@@ -8,8 +8,8 @@ class Nav extends Component {
       <header id="masthead" className="header shadow-md relative">
         <div className="wrap flex flex-wrap justify-center md:justify-between items-center">
           <Link className="logo m-2 md:m-4 md:ml-0" to={'/'} title="Go Home">Home</Link>
-          <div className="flex m-2 md:m-0 items-center">
-            <div className="relative mr-4">
+          <div className="flex my-2 sm:m-2 md:m-0 items-center">
+            <div className="relative">
               <select 
               className="block appearance-none w-full bg-white border-2 border-gray-200 theme-font font-black lg:text-lg py-3 px-4 pr-8 rounded-sm leading-none focus:outline-none focus:bg-white focus:border-teal-500"
               onChange={(ev) => {
@@ -83,10 +83,10 @@ class Nav extends Component {
                 {/* <option>What's the MVP?</option> */}
               </select>
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2 text-gray-700">
-                <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                <svg width="24" className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
               </div>
             </div>
-            <a className="hidden md:block btn btn-cta text-sm md:text-base lg:text-lg" href="https://airtable.com/shrLdKbYqRPR6ssaL" target="_blank" rel="noopener noreferrer">Submit Activity</a>
+            <a className="hidden md:block btn btn-cta ml-4 text-sm md:text-base lg:text-lg" href="https://airtable.com/shrLdKbYqRPR6ssaL" target="_blank" rel="noopener noreferrer">Submit Activity</a>
           </div>
         </div>
       </header>
