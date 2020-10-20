@@ -24,7 +24,16 @@ export default class ForTemplate extends React.Component {
                   Virtual Activities for Facilitating <span>{toLaxTitleCase(For)}</span> Processes
                 </h1>
                 <p className="text-lg theme-font lg:text-xl">
-                  Activities for surfacing thoughts, feelings, reactions, and predispositions on Zoom, using apps like <AppsListing postEdges={postEdges} />, contributed by facilitators like <AuthorsListing postEdges={postEdges} />.
+                  Activities for 
+                  { For === "emotion" && 
+                    <span> surfacing thoughts, feelings, reactions, and predispositions on</span>
+                  }{ For === "ideation" && 
+                    <span> forming, generating, and brainstorming ideas and concepts on</span>
+                  }{ For === "clarification" && 
+                  <span> distilling, pinpointing, getting to the bottom of, and finding common ground on</span>
+                  }{ For === "execution" && 
+                    <span> decision-making, planning, strategizing, and directing on</span>
+                  } Zoom, using apps like <AppsListing postEdges={postEdges} />, contributed by facilitators like <AuthorsListing postEdges={postEdges} />.
                 </p>
               </div>
               <aside className="relative">

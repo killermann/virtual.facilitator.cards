@@ -39,6 +39,9 @@ export default class PostTemplate extends React.Component {
                 { post.Apps && <span>&nbsp;+&nbsp;</span> }
                 { post.Apps && 
                 <Link title={post.Apps} to={`/apps/${kebabCase(post.Apps)}`} className={`hover:opacity-75 fci fci-${kebabCase(post.Apps)}`} style={{ color: '#fff' }}><span className="sr-only">{post.apps}</span></Link>}
+                { post.For && <span>&nbsp;=</span> }
+                { post.For && 
+                <Link to={`/for/${kebabCase(post.For)}`} className={`ml-1 hover:opacity-75`} style={{ color: '#fff' }}><i className={`fci fci-${kebabCase(post.For)}`}></i></Link>}
               </div>
             </header>
             <article className="griddled wrap p-6 lg:p-12 bg-white">

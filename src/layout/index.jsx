@@ -4,7 +4,7 @@ import SEO from "../components/SEO/SEO";
 import Nav from "../components/Nav/Nav"
 import config from "../../data/SiteConfig";
 
-export default class MainLayout extends React.Component {
+export default class Layout extends React.Component {
   render() {
     const { children } = this.props;
     return (

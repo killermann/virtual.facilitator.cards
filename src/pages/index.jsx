@@ -1,6 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
-import { graphql } from "gatsby";
+import { graphql, Link} from "gatsby";
 import Layout from "../layout";
 import PostListing from "../components/PostListing/PostListing";
 import SEO from "../components/SEO/SEO";
@@ -8,7 +8,10 @@ import config from "../../data/SiteConfig";
 
 class Index extends React.Component {
   render() {
-    const postEdges = this.props.data.allAirtable.edges;
+    const latestPosts = this.props.data.latest.edges;
+    const emotionPosts = this.props.data.emotion.edges;
+    const clarificationPosts = this.props.data.clarification.edges;
+   
     return (
       <Layout>
         <Helmet>
@@ -31,10 +34,33 @@ class Index extends React.Component {
             </div>
           </div>
         </section>
-        <section className="griddled wrap">
+        <section className="griddled wrap pb-10">
           <aside className="sidebar mt-6 px-8 md:p-0">
           </aside>
-          <PostListing postEdges={postEdges} />
+          <div>
+            <h2 className="theme-font font-black text-lg md:text-xl uppercase mb-4 text-gray-500">Latest Activities</h2>
+            <PostListing postEdges={latestPosts} />
+          </div>
+        </section>
+        <section className="griddled wrap pb-10">
+          <aside className="sidebar mt-6 px-8 md:p-0">
+          </aside>
+          <div>
+            <h2 className="theme-font font-black text-lg md:text-xl uppercase mb-4 text-gray-500">
+              Latest <Link to={`/for/emotion`} className="text-teal-500"><i className="fci fci-emotion mr-1"></i>Emotion</Link> Activities
+            </h2>
+            <PostListing postEdges={emotionPosts} />
+          </div>
+        </section>
+        <section className="griddled wrap pb-10">
+          <aside className="sidebar mt-6 px-8 md:p-0">
+          </aside>
+          <div>
+            <h2 className="theme-font font-black text-lg md:text-xl uppercase mb-4 text-gray-500">
+              Latest <Link to={`/for/clarification`} className="text-yellow-500"><i className="fci fci-clarification mr-1"></i>Clarification</Link> Activities
+            </h2>
+            <PostListing postEdges={clarificationPosts} />
+          </div>
         </section>
       </Layout>
     );
@@ -46,8 +72,8 @@ export default Index;
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query IndexQuery {
-    allAirtable(
-      limit: 2000
+    latest: allAirtable(
+      limit: 4
       filter: {data: {Status: {eq: "Publish"}}}
     ) {
       edges {
@@ -71,6 +97,68 @@ export const pageQuery = graphql`
                 Instagram
                 Website
                 Twitter
+              }
+            }
+            Gist {
+              childMarkdownRemark {
+                html
+              }
+            }
+          }
+        }
+      }
+    }
+    emotion: allAirtable(
+      limit: 4
+      filter: {data: {Status: {eq: "Publish"}, For: {eq: "emotion"}}}
+    ) {
+      edges {
+        node {
+          data {
+            Title
+            Card
+            Slug
+            Name
+            For
+            Email
+            Apps
+            Status
+            Author {
+              data {
+                First_Name
+                Last_Name
+                Author_Email
+              }
+            }
+            Gist {
+              childMarkdownRemark {
+                html
+              }
+            }
+          }
+        }
+      }
+    }
+    clarification: allAirtable(
+      limit: 4
+      filter: {data: {Status: {eq: "Publish"}, For: {eq: "clarification"}}}
+    ) {
+      edges {
+        node {
+          data {
+            Title
+            Card
+            Slug
+            Name
+            For
+            Email
+            Apps
+            Status
+            Author {
+              data {
+                First_Name
+                Last_Name
+                Author_Email
               }
             }
             Gist {

@@ -26,13 +26,14 @@ class PostListing extends React.Component {
     return (
       <div className="grid grid-flow-row grid-cols-1 gap-6 lg:gap-8 pb-6 lg:pb-8 sm:grid-cols-2">
         { postList.map(post => (
-          <div key={post.title} className={"flex items-stretch " + post.for}>
+          <div key={post.title} className={`flex items-stretch ${post.for}`}>
             <Link className="post-box rounded flex items-stretch shadow-xl overflow-hidden hover:shadow-2xl focus:shadow-2xl transition duration-200 ease-out flex flex-col justify-between items-stretch" to={`/${post.path}`} key={post.title}>
               <div>
                 <header className="post-header py-8 px-1 theme-font text-white font-black flex flex-wrap leading-none items-center text-2xl lg:text-3xl justify-center">
                   <span className="fci fci-zoom"><span className="sr-only">Zoom</span></span>
                   { post.apps && <span>&nbsp;+&nbsp;</span> }
                   { post.apps && <span className={`fci fci-${kebabCase(post.apps)}`}><span className="sr-only">{post.apps}</span></span>}
+                  { post.for && <span><span>&nbsp;=</span><i className={`ml-1 fci fci-${kebabCase(post.for)}`}></i></span>}
                 </header>
                 <section className="p-6 pb-4">
                   <h3 className="theme-font text-color-default font-black text-xl mb-4">{post.title}</h3>
