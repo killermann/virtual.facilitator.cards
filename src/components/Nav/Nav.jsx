@@ -5,7 +5,7 @@ import kebabCase from "lodash/kebabCase";
 class Nav extends Component {
   render() {
     return (
-      <header id="masthead" className="header shadow-md relative">
+      <header id="masthead" className="header relative" style={{boxShadow: '0 0 2.5em 0 rgba(138, 168, 167, 0.35)'}}>
         <div className="wrap flex flex-wrap justify-center md:justify-between items-center">
           <Link className="logo m-2 md:m-4 md:ml-0" to={'/'} title="Go Home">Home</Link>
           <div className="flex my-2 sm:m-2 md:m-0 items-center">

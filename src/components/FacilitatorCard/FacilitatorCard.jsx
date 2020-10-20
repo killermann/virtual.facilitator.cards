@@ -3,13 +3,13 @@ import kebabCase from "lodash/kebabCase";
 
 class FacilitatorCard extends Component {
   render() {
-    const { card } = this.props;
+    const { Card } = this.props;
     const { For } = this.props;
-    const { explanation } = this.props;
-    const { group } = this.props;
-    const { prop1 } = this.props;
-    const { prop2 } = this.props;
-    const { prop3 } = this.props;
+    const { Explanation } = this.props;
+    const { Group } = this.props;
+    const { Prop_1 } = this.props;
+    const { Prop_2 } = this.props;
+    const { Prop_3 } = this.props;
 
     return (
       <div className="back">
@@ -17,23 +17,23 @@ class FacilitatorCard extends Component {
           <header className="card-header">
             <ul className="icon-list">
               <li className="icon group-size">
-                <i className={`fci fci-${kebabCase(group)}`}></i>
+                <i className={`fci fci-${kebabCase(Group)}`}></i>
               </li>
               <li className="icon category">
                 <i className={`fci fci-${kebabCase(For)}`}></i>
               </li>
               <li className="icon props">
-                { prop1 && <i className={`fci fci-${kebabCase(prop1)}`}></i>}
-                { prop2 && <i className={`fci fci-${kebabCase(prop2)}`}></i>}
-                { prop3 && <i className={`fci fci-${kebabCase(prop3)}`}></i>}
+                { Prop_1 && <i className={`fci fci-${kebabCase(Prop_1)}`}></i>}
+                { Prop_2 && <i className={`fci fci-${kebabCase(Prop_2)}`}></i>}
+                { Prop_3 && <i className={`fci fci-${kebabCase(Prop_3)}`}></i>}
               </li>
             </ul>
             <span className="title">
-                { card }
+                { Card }
             </span>
           </header>
         <footer className="card-description">
-          <p>{ explanation }</p>
+          <p>{ Explanation }</p>
         </footer>
       </div>
     </div>

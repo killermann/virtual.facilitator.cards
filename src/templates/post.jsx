@@ -47,13 +47,13 @@ export default class PostTemplate extends React.Component {
                   <div className="text-sm mb-2 text-gray-700 text-center">Facilitate this card &darr;</div>
                   <Link to={`/processes/${kebabCase(post.Card)}`}>
                     <FacilitatorCard 
-                      card={post.Card} 
+                      Card={post.Card} 
                       For={post.For} 
-                      group={post.Group} 
-                      explanation={post.Explanation} 
-                      prop1={post.Prop_1} 
-                      prop2={post.Prop_2} 
-                      prop3={post.Prop_3} 
+                      Group={post.Group} 
+                      Explanation={post.Explanation} 
+                      Prop_1={post.Prop_1} 
+                      Prop_2={post.Prop_2} 
+                      Prop_3={post.Prop_3} 
                     />
                     </Link>
                   <div className="text-sm mt-2 text-gray-700 text-center">...but on Zoom, with digital props!</div>

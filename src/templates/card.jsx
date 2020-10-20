@@ -6,13 +6,15 @@ import Layout from "../layout";
 import PostListing from "../components/PostListing/PostListing";
 import AppsListing from "../components/AppsListing/AppsListing";
 import AuthorsListing from "../components/AuthorsListing/AuthorsListing";
+import FacilitatorCard from "../components/FacilitatorCard/FacilitatorCard";
 
 export default class CardTemplate extends React.Component {
   render() {
     const { Card } = this.props.pageContext;
     const postEdges = this.props.data.allAirtable.edges;
+    const firstCard = postEdges[0].node.data // fetches the first item
+
     return (
-      
       <Layout>
         <Helmet title={`${Card} Virtual Facilitation Activities | Facilitator Cards`} />
         <div className={Card}>
@@ -27,6 +29,17 @@ export default class CardTemplate extends React.Component {
                 </p>
               </div>
               <aside className="relative">
+                <div className="md:fixed">
+                  <FacilitatorCard 
+                    Card={firstCard.Card} 
+                    For={firstCard.For} 
+                    Group={firstCard.Group} 
+                    Explanation={firstCard.Explanation} 
+                    Prop_1={firstCard.Prop_1} 
+                    Prop_2={firstCard.Prop_2} 
+                    Prop_3={firstCard.Prop_3} 
+                  />
+                </div>
               </aside>
             </div>
           </header>
@@ -55,6 +68,11 @@ export const pageQuery = graphql`
             Slug
             Name
             For
+            Group
+            Explanation
+            Prop_1
+            Prop_2
+            Prop_3
             Email
             Apps
             Status
