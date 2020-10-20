@@ -9,6 +9,7 @@ import Author from "../components/Author/Author"
 import PostTags from "../components/PostTags/PostTags";
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
+import FacilitatorCard from "../components/FacilitatorCard/FacilitatorCard";
 
 
 export default class PostTemplate extends React.Component {
@@ -42,6 +43,22 @@ export default class PostTemplate extends React.Component {
             </header>
             <article className="griddled wrap p-6 lg:p-12 bg-white">
               <aside className="sidebar hidden md:block">
+                <div>
+                  <div className="text-sm mb-2 text-gray-700 text-center">Facilitate this card &darr;</div>
+                  <Link to={`/processes/${kebabCase(post.Card)}`}>
+                    <FacilitatorCard 
+                      card={post.Card} 
+                      For={post.For} 
+                      group={post.Group} 
+                      explanation={post.Explanation} 
+                      prop1={post.Prop_1} 
+                      prop2={post.Prop_2} 
+                      prop3={post.Prop_3} 
+                    />
+                    </Link>
+                  <div className="text-sm mt-2 text-gray-700 text-center">...but on Zoom, with digital props!</div>
+                </div>
+                
                 <nav className="theme-font py-6 text-lg md:sticky md:top-0 leading-none">
                   <h2 className="p-2" id="table-of-contents">
                     Contents:
@@ -135,7 +152,7 @@ export default class PostTemplate extends React.Component {
                             }
                             {post.Forms && 
                             <p>
-                              <strong className="mr-2"><span className="text-gray-700 fci fci-google-docs inline-block w-8 text-center"></span>Google Forms:</strong>
+                              <strong className="mr-2"><span className="text-gray-700 fci fci-google-forms inline-block w-8 text-center"></span>Google Forms:</strong>
                               <a href={post.Forms} title="Forms template link" target="_blank" rel="noopener noreferrer">Click to copy Google Forms template</a>
                             </p>
                             }
@@ -207,6 +224,8 @@ export const pageQuery = graphql`
       data {
         Title
         For
+        Card
+        Group
         Prop_1
         Prop_2
         Prop_3

@@ -50,12 +50,13 @@
 	width:15em;
 	max-width:100%;
 	height:21em;
-	border-radius:$borad;
 	box-shadow:0em .7em 1.4em -.4em rgba(50,50, 70, .3);
 	overflow:hidden;
 	display:flex;
 	flex-direction:column;
-	margin:0 auto 4em;
+	margin:0 auto;
+
+	@apply .rounded;
 
 	.card-header, .card-description {
 		padding:1em;
@@ -64,7 +65,6 @@
 	}
 
 	.card-header {
-		padding-bottom: .85em;
 		display:flex;
 		max-height: 8.09em;
 		flex-direction: column;
@@ -72,11 +72,23 @@
 		color: white;
 
 		.icon-list {
+			box-sizing: border-box;
+			display:flex;
 			justify-content: space-between;
 			font-size:1.6em;
+
+			.icon {
+				width: 1em;
+				height: 1em;
+				margin: 0;
+				padding: 0;
+				display: block;
+			}
 		}
 
 		.props {
+			word-break:break-word;
+			line-height: 1.44;
 			.fci + .fci {margin-top:.42em;}
 		}
 
@@ -113,21 +125,12 @@
 	}
 }
 
-.card.emotion .card-header, .back .card.emotion { background:$blue;}
+.card.emotion .card-header, .back .card.emotion { background:$teal;}
 .card.ideation .card-header, .back .card.ideation { background:$green;}
 .card.clarification .card-header, .back .card.clarification { background:$orange;}
 .card.execution .card-header, .back .card.execution { background:$red;}
 
 .back {
-
-	.card-header {
-		padding-bottom:0;
-
-		.title {
-			margin-bottom:0.833333em;
-		}
-	}
-
 	.card-description {
 		padding-top:0;
 	}
