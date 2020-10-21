@@ -12,6 +12,7 @@ module.exports = {
       'default': '.75em',
       'lg': '1.5em',
       'xl': '3em',
+      'full': '9999px'
     },
     fontSize: {
       'xs': '.56rem',

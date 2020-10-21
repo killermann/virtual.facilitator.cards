@@ -27,7 +27,7 @@ class PostListing extends React.Component {
       <div className="grid grid-flow-row grid-cols-1 gap-6 lg:gap-8 pb-6 lg:pb-8 sm:grid-cols-2">
         { postList.map(post => (
           <div key={post.title} className={`flex items-stretch ${post.for}`}>
-            <Link className="post-box rounded flex items-stretch shadow-xl overflow-hidden hover:shadow-2xl focus:shadow-2xl transition duration-200 ease-out flex flex-col justify-between items-stretch" to={`/${post.path}`} key={post.title}>
+            <Link className="post-box bg-white rounded flex items-stretch shadow-xl overflow-hidden hover:shadow-2xl focus:shadow-2xl transition duration-200 ease-out flex flex-col justify-between items-stretch" to={`/${post.path}`} key={post.title}>
               <div>
                 <header className="post-header py-8 px-1 theme-font text-white font-black flex flex-wrap leading-none items-center text-2xl lg:text-3xl justify-center">
                   <span className="fci fci-zoom"><span className="sr-only">Zoom</span></span>

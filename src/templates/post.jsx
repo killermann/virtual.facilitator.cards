@@ -30,10 +30,10 @@ export default class PostTemplate extends React.Component {
         <div>
           <Helmet>
             <title>{`${post.Title} | ${config.siteTitle}`}</title>
-            <SEO postPath={slug} postNode={postNode} postSEO />
           </Helmet>
+          <SEO postPath={slug} postNode={postNode} postSEO />
           <main className={post.For}>
-            <header className="post-header text-white ">
+            <header className="post-header text-white">
               <div class="wrap p-8 lg:py-12 flex flex-wrap leading-none justify-center items-center font-black theme-font font-black text-3xl lg:text-4xl">
                 <span className="fci fci-zoom"><span className="sr-only">Zoom</span></span>
                 { post.Apps && <span>&nbsp;+&nbsp;</span> }
@@ -91,28 +91,28 @@ export default class PostTemplate extends React.Component {
                 {post.Steps && 
                   <section className="mt-12" id="step-by-step">
                     <h2 className="theme-font text-xl md:text-2xl lg:text-3xl font-black mb-2">Step-by-Step Instructions</h2>
-                    <div className="bg-gray-100 prose rounded p-6 md:p-8 lg:p-10" dangerouslySetInnerHTML={{ __html: post.Steps.childMarkdownRemark.html }} />
+                    <div className="bg-gray-100 prose rounded -mx-4 p-4 lg:mx-auto lg:p-8" dangerouslySetInnerHTML={{ __html: post.Steps.childMarkdownRemark.html }} />
                   </section>
                 }
 
                 {post.Prep && 
                   <section className="mt-12" id="prep">
                     <h2 className="theme-font text-xl md:text-2xl lg:text-3xl font-black mb-2">Prep</h2>
-                    <div className="bg-gray-100 prose rounded p-6 md:p-8 lg:p-10" dangerouslySetInnerHTML={{ __html: post.Prep.childMarkdownRemark.html }} />
+                    <div className="bg-gray-100 prose rounded -mx-4 p-4 lg:mx-auto lg:p-8" dangerouslySetInnerHTML={{ __html: post.Prep.childMarkdownRemark.html }} />
                   </section>
                 }
                 
                 {post.Context && 
                   <section className="mt-12" id="context">
                     <h2 className="theme-font text-xl md:text-2xl lg:text-3xl font-black mb-2">Context</h2>
-                    <div className="bg-gray-100 prose rounded p-6 md:p-8 lg:p-10" dangerouslySetInnerHTML={{ __html: post.Context.childMarkdownRemark.html }} />
+                    <div className="bg-gray-100 prose rounded -mx-4 p-4 lg:mx-auto lg:p-8" dangerouslySetInnerHTML={{ __html: post.Context.childMarkdownRemark.html }} />
                   </section>
                 }
 
                 {post.Additional_Resources && 
                   <section className="mt-12" id="resources">
                     <h2 className="theme-font text-xl md:text-2xl lg:text-3xl font-black mb-2">Additional Resources</h2>
-                    <div className="bg-gray-100 prose rounded p-6 md:p-8 lg:p-10">
+                    <div className="bg-gray-100 prose rounded -mx-4 p-4 lg:mx-auto lg:p-8">
                       {(post.YouTube || post.Screencast || post.Other_Resource_Link) && <div className="mb-6 md:mb-8 lg:mb-10">
                         <h3 className="theme-font text-lg md:text-xl font-black mb-4">For More Info:</h3>
                         {post.YouTube && 
@@ -177,8 +177,6 @@ export default class PostTemplate extends React.Component {
                     </div>
                   </section>
                 }
-
-
                 <div className="post-meta">
                   <PostTags tags={post.tags} />
                   {/* <SocialLinks postPath={slug} postNode={postNode} /> */}
