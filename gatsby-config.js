@@ -40,7 +40,7 @@ module.exports = {
             baseId: process.env.AIRTABLE_BASE, // specify via env
             tableName: process.env.AIRTABLE_TABLE_NAME, // specify via env
             queryName: `posts`, // optional
-            tableLinks: [`Author`],
+            tableLinks: [`Author`,`Replies`],
             mapping: { 
               Gist: `text/markdown`, 
               Steps: `text/markdown`,
@@ -52,6 +52,15 @@ module.exports = {
             baseId:  process.env.AIRTABLE_BASE,
             tableName: process.env.AIRTABLE_TABLE_NAME_LINKED,
             tableLinks: [`Activities`],
+          },
+          {
+            baseId:  process.env.AIRTABLE_BASE,
+            tableName: `Replies`,
+            mapping: {
+              Conditions: `text/markdown`,
+              Results: `text/markdown`,
+              Tweaks: `text/markdown`
+            }
           }
         ]
       }

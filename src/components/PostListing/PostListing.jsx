@@ -16,7 +16,8 @@ class PostListing extends React.Component {
         author: postEdge.node.data.Author ? postEdge.node.data.Author[0].data.First_Name + " " + postEdge.node.data.Author[0].data.Last_Name : postEdge.node.data.Name,
         gist: postEdge.node.data.Gist,
         for: postEdge.node.data.For,
-        apps: postEdge.node.data.Apps
+        apps: postEdge.node.data.Apps,
+        replies: postEdge.node.data.Replies ? postEdge.node.data.Replies : null,
       });
     });
     return postList;
@@ -27,9 +28,9 @@ class PostListing extends React.Component {
       <div className="grid grid-flow-row grid-cols-1 gap-6 lg:gap-8 pb-6 lg:pb-8 sm:grid-cols-2">
         { postList.map(post => (
           <div key={post.title} className={`flex items-stretch ${post.for}`}>
-            <Link className="post-box bg-white rounded flex items-stretch shadow-xl overflow-hidden hover:shadow-2xl focus:shadow-2xl transition duration-200 ease-out flex flex-col justify-between items-stretch" to={`/${post.path}`} key={post.title}>
+            <Link className="post-box flex flex-col justify-between items-stretch bg-white rounded flex items-stretch shadow-xl overflow-hidden hover:shadow-2xl focus:shadow-2xl pop-out" to={`/${post.path}`} key={post.title}>
               <div>
-                <header className="post-header py-8 px-1 theme-font text-white font-black flex flex-wrap leading-none items-center text-2xl lg:text-3xl justify-center">
+                <header className="post-header for-bg py-8 px-1 theme-font text-white font-black flex flex-wrap leading-none items-center text-2xl lg:text-3xl justify-center">
                   <span className="fci fci-zoom"><span className="sr-only">Zoom</span></span>
                   { post.apps && <span>&nbsp;+&nbsp;</span> }
                   { post.apps && <span className={`fci fci-${kebabCase(post.apps)}`}><span className="sr-only">{post.apps}</span></span>}
@@ -40,9 +41,21 @@ class PostListing extends React.Component {
                   <div className="text-gray-900" dangerouslySetInnerHTML={{ __html: post.gist.childMarkdownRemark.html }} />    
                 </section>
               </div>
-              <footer className="byline flex justify-self-end items-center px-6 pb-6">
-                <Gravatar email={post.email} size={36} className="rounded-sm mr-2 border-gray-300 border-2" alt={'Author Headshot'} />
-                <span className="uppercase theme-font font-black text-gray-600">{post.author}</span>
+              <footer className="byline flex justify-between justify-self-end items-center px-6 pb-6 theme-font font-black text-gray-600">
+                <div className="flex items-center">
+                  <Gravatar email={post.email} size={36} className="rounded mr-2 border-2 border-white" alt={'Author Headshot'} />
+                  <span className="uppercase">{post.author}</span>
+                </div>
+                {post.replies && 
+                  <div className="flex items-center">
+                    <span>+&nbsp;</span>
+                    <Gravatar email={post.replies[0].data.Reply_Email} size={36} className="rounded border-2 border-white" alt={'Author Headshot'} />
+                    
+                    {post.replies[1] && <Gravatar email={post.replies[1].data.Reply_Email} size={36} className="-ml-2 rounded border-2 border-white" alt={'Replier Headshot'} /> }
+
+                    {post.replies[2] && <Gravatar email={post.replies[2].data.Reply_Email} size={36} className="-ml-2 rounded border-2 border-white" alt={'Replier Headshot'} /> }
+                  </div>
+                }
               </footer>
             </Link>
             

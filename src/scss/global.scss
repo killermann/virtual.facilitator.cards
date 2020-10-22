@@ -56,6 +56,14 @@ h1.theme-font, h2.theme-font, h3.theme-font, h4.theme-font, h5.theme-font {
 
 // Components
 
+.pop-out {
+  @apply .transform .transition .duration-100 .ease-out;
+  
+  &:hover, &:focus {
+    @apply .-translate-y-1 .scale-105;
+  }
+}
+
 .btn {
   @apply .text-gray-900 .py-3 .px-4 .rounded-sm .theme-font .font-black .leading-none .bg-gradient-to-br .from-gray-100 .to-gray-200 .transform .transition .duration-100 .ease-out;
 
@@ -124,7 +132,7 @@ h1.theme-font, h2.theme-font, h3.theme-font, h4.theme-font, h5.theme-font {
         font-size: 1.4em;
         line-height: 1.25;
         left: 0;
-        @apply .absolute .theme-font .font-black .text-gray-700;
+        @apply .absolute .theme-font .font-black .text-gray-600;
       }
     }
   }
@@ -136,7 +144,8 @@ h1.theme-font, h2.theme-font, h3.theme-font, h4.theme-font, h5.theme-font {
 
 .wrap {
   max-width: 1280px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   @apply .px-6;
 
   @screen lg {
@@ -194,10 +203,17 @@ h1.theme-font, h2.theme-font, h3.theme-font, h4.theme-font, h5.theme-font {
     @apply .text-teal-500;
   }
 
+  .btn-cta {
+    @apply .from-teal-300 .to-teal-600 .text-teal-900;    
+
+    &:hover, &:focus {
+      @apply .text-teal-800;
+    }
+  }
+
 }
 .ideation {
-  .post-header, 
-  .react-gravatar,
+  .for-bg,
   .submenu.active:before {
     @apply .bg-green-500; 
   }
@@ -210,10 +226,17 @@ h1.theme-font, h2.theme-font, h3.theme-font, h4.theme-font, h5.theme-font {
     @apply .text-green-500;
   }
 
+  .btn-cta {
+    @apply .from-green-300 .to-green-600 .text-green-900;    
+
+    &:hover, &:focus {
+      @apply .text-green-800;
+    }
+  }
+
 }
 .clarification {
-  .post-header, 
-  .react-gravatar,
+  .for-bg,
   .submenu.active:before {
     @apply .bg-yellow-500; 
   }
@@ -224,10 +247,17 @@ h1.theme-font, h2.theme-font, h3.theme-font, h4.theme-font, h5.theme-font {
   a:hover, a:focus {
     @apply .text-yellow-500;
   }
+
+  .btn-cta {
+    @apply .from-yellow-300 .to-yellow-600 .text-yellow-900;    
+
+    &:hover, &:focus {
+      @apply .text-yellow-800;
+    }
+  }
 }
 .execution {
-  .post-header, 
-  .react-gravatar,
+  .for-bg,
   .submenu.active:before { 
     @apply .bg-red-500;
   }
@@ -237,5 +267,13 @@ h1.theme-font, h2.theme-font, h3.theme-font, h4.theme-font, h5.theme-font {
 
   a:hover, a:focus {
     @apply .text-red-500;
+  }
+
+  .btn-cta {
+    @apply .from-red-300 .to-red-600 .text-red-900;    
+
+    &:hover, &:focus {
+      @apply .text-red-800;
+    }
   }
 }

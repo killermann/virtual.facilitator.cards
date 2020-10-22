@@ -10,6 +10,7 @@ import PostTags from "../components/PostTags/PostTags";
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
 import FacilitatorCard from "../components/FacilitatorCard/FacilitatorCard";
+import Replies from "../components/Replies/Replies";
 
 
 export default class PostTemplate extends React.Component {
@@ -19,6 +20,8 @@ export default class PostTemplate extends React.Component {
     const postNode = data.airtable;
     const post = postNode.data;
     const author = post.Author ? post.Author[0].data.First_Name + " " + post.Author[0].data.Last_Name : post.Name;
+    const replies = post.Replies ? post.Replies : null;
+    const titlePlusAuthor = `${post.Title} by ${post.Name}`;
     if (!post.id) {
       post.id = slug;
     }
@@ -33,22 +36,22 @@ export default class PostTemplate extends React.Component {
           </Helmet>
           <SEO postPath={slug} postNode={postNode} postSEO />
           <main className={post.For}>
-            <header className="post-header text-white">
+            <header className="post-header for-bg text-white">
               <div class="wrap p-8 lg:py-12 flex flex-wrap leading-none justify-center items-center font-black theme-font font-black text-3xl lg:text-4xl">
                 <span className="fci fci-zoom"><span className="sr-only">Zoom</span></span>
                 { post.Apps && <span>&nbsp;+&nbsp;</span> }
                 { post.Apps && 
-                <Link title={post.Apps} to={`/apps/${kebabCase(post.Apps)}`} className={`hover:opacity-75 fci fci-${kebabCase(post.Apps)}`} style={{ color: '#fff' }}><span className="sr-only">{post.apps}</span></Link>}
+                <Link title={post.Apps} to={`/apps/${kebabCase(post.Apps)}`} className={`pop-out fci fci-${kebabCase(post.Apps)}`} style={{ color: '#fff' }}><span className="sr-only">{post.apps}</span></Link>}
                 { post.For && <span>&nbsp;=</span> }
                 { post.For && 
-                <Link to={`/for/${kebabCase(post.For)}`} className={`ml-1 hover:opacity-75`} style={{ color: '#fff' }}><i className={`fci fci-${kebabCase(post.For)}`}></i></Link>}
+                <Link to={`/for/${kebabCase(post.For)}`} className={`ml-1 pop-out`} style={{ color: '#fff' }}><i className={`fci fci-${kebabCase(post.For)}`}></i></Link>}
               </div>
             </header>
             <article className="griddled wrap p-6 lg:p-12 bg-white">
               <aside className="sidebar hidden md:block">
                 <div>
                   <div className="text-sm mb-2 text-gray-700 text-center">Facilitate this card &darr;</div>
-                  <Link to={`/processes/${kebabCase(post.Card)}`}>
+                  <Link className="pop-out block" to={`/processes/${kebabCase(post.Card)}`}>
                     <FacilitatorCard 
                       Card={post.Card} 
                       For={post.For} 
@@ -73,6 +76,7 @@ export default class PostTemplate extends React.Component {
                     {post.Context && <li><a className="submenu p-2 block" href="#context">Context</a  ></li>}
                     {post.Additional_Resources && <li><a className="submenu p-2 block" href="#resources">Resources</a></li>}
                     {author && <li><a className="submenu p-2 block" href="#author">Author</a  ></li>}
+                    {replies && <li><a className="submenu p-2 block" href="#replies">Tested &amp; Tweaked</a></li>}
                   </ol>
                 </nav>
               </aside>
@@ -138,37 +142,37 @@ export default class PostTemplate extends React.Component {
                             {post.Mural && 
                             <p>
                               <strong className="mr-2"><span className="text-gray-700 fci fci-mural inline-block w-8 text-center"></span>MURAL:</strong>
-                              <a href={post.Mural} title="Mural template link" target="_blank" rel="noopener noreferrer">Click to copy MURAL template</a>
+                              <a href={post.Mural} title="Mural template link" target="_blank" rel="noopener noreferrer">Copy MURAL template</a>
                             </p>
                             }
                             {post.Slides && 
                             <p>
-                              <strong className="mr-2"><span className="text-gray-700 fci fci-google-slides  inline-block w-8 text-center"></span>Google Slides:</strong>
-                              <a href={post.Slides} title="Slides template link" target="_blank" rel="noopener noreferrer">Click to copy Google Slides template</a>
+                              <strong className="mr-2"><span className="text-gray-700 fci fci-google-slides  inline-block w-8 text-center"></span>Slides:</strong>
+                              <a href={post.Slides} title="Slides template link" target="_blank" rel="noopener noreferrer">Copy Google Slides template</a>
                             </p>
                             }
                             {post.Docs && 
                             <p>
-                              <strong className="mr-2"><span className="text-gray-700 fci fci-google-docs inline-block w-8 text-center"></span>Google Docs:</strong>
-                              <a href={post.Docs} title="Docs template link" target="_blank" rel="noopener noreferrer">Click to copy Google Docs template</a>
+                              <strong className="mr-2"><span className="text-gray-700 fci fci-google-docs inline-block w-8 text-center"></span>Docs:</strong>
+                              <a href={post.Docs} title="Docs template link" target="_blank" rel="noopener noreferrer">Copy Google Docs template</a>
                             </p>
                             }
                             {post.Forms && 
                             <p>
-                              <strong className="mr-2"><span className="text-gray-700 fci fci-google-forms inline-block w-8 text-center"></span>Google Forms:</strong>
-                              <a href={post.Forms} title="Forms template link" target="_blank" rel="noopener noreferrer">Click to copy Google Forms template</a>
+                              <strong className="mr-2"><span className="text-gray-700 fci fci-google-forms inline-block w-8 text-center"></span>Forms:</strong>
+                              <a href={post.Forms} title="Forms template link" target="_blank" rel="noopener noreferrer">Copy Google Forms template</a>
                             </p>
                             }
                             {post.Drawings && 
                             <p>
-                              <strong className="mr-2"><span className="text-gray-700 fci fci-google-drawings inline-block w-8 text-center"></span>Google Drawings:</strong>
-                              <a href={post.Drawings} title="Drawings template link" target="_blank" rel="noopener noreferrer">Click to copy Google Drawings template</a>
+                              <strong className="mr-2"><span className="text-gray-700 fci fci-google-drawings inline-block w-8 text-center"></span>Drawings:</strong>
+                              <a href={post.Drawings} title="Drawings template link" target="_blank" rel="noopener noreferrer">Copy Google Drawings template</a>
                             </p>
                             }
                             {post.Other_Template_Link && 
                             <p>
                               <strong className="mr-2"><span className="text-gray-700 fci fci-custom inline-block w-8 text-center"></span>{post.Other_Template_Name}:</strong>
-                              <a href={post.Other_Template_Link} title="Docs template link" target="_blank" rel="noopener noreferrer">Click to download template</a>
+                              <a href={post.Other_Template_Link} title="Docs template link" target="_blank" rel="noopener noreferrer">Download template</a>
                             </p>
                             }
                           </div>
@@ -181,7 +185,6 @@ export default class PostTemplate extends React.Component {
                   <PostTags tags={post.tags} />
                   {/* <SocialLinks postPath={slug} postNode={postNode} /> */}
                 </div>
-                {author && <UserInfo author={author} />}
                 {author &&
                   <section className="mt-12" id="author">
                     <h2 className="theme-font text-xl md:text-2xl lg:text-3xl font-black mb-2">Author</h2>
@@ -190,6 +193,43 @@ export default class PostTemplate extends React.Component {
                 }
               </div>
             </article>
+            <section id="replies" className="wrap mt-6 pb-12">
+              {replies &&
+              <div>
+                <h2 className="theme-font text-xl md:text-2xl lg:text-3xl text-gray-900 font-black mb-2 flex items-center flex-wrap">
+                  Tested &amp; Tweaked by 
+                  <Gravatar email={replies[0].data.Reply_Email} size={52} className="ml-2 rounded-sm" alt={replies[0].data.Reply_Name} />
+                  {replies[1] && <Gravatar email={replies[1].data.Reply_Email} size={52} className="ml-2 rounded-sm" alt={replies[1].data.Reply_Name} /> }
+                  {replies[2] && <Gravatar email={replies[2].data.Reply_Email} size={52} className="ml-2 rounded-sm" alt={replies[2].data.Reply_Name} /> }
+                </h2>
+                <Replies replyEdges={replies} activityTitle={titlePlusAuthor} />
+              </div>
+              }{ !replies &&
+                <div>
+                  <h2 className="theme-font text-xl md:text-2xl lg:text-3xl font-black mb-2">
+                    Facilitation Testers Needed
+                  </h2>
+                  <div className="griddled">
+                    <aside className="sidebar pb-6">
+                      <p className="mb-4">
+                        Zoom is uncharted territory for a lot of us who are transitioning to virtual facilitation for the first time. Want to help us chart it? :)
+                      </p>
+                      <a className="block text-center text-lg btn btn-cta" target="_blank" rel="noopener noreferrer" href={`https://airtable.com/shrateXsJe8xEkeAW?prefill_Reply%20Activity=${encodeURIComponent(titlePlusAuthor)}`}>
+                        Contribute a Reply
+                      </a>
+                    </aside>
+                    <div className="bg-gray-100 prose rounded -mx-4 p-4 lg:mx-auto lg:p-8">
+                      <p className="mb-4">
+                        This activity by {author} would really benefit from <strong>other facilitators testing it, tweaking it, and reporting back</strong>. If you give it a try in your virtual facilitation, all we ask is that you <a className="font-bold" target="_blank" rel="noopener noreferrer" href={`https://airtable.com/shrateXsJe8xEkeAW?prefill_Reply%20Activity=${encodeURIComponent(titlePlusAuthor)}`}>tell us how it went</a>.
+                      </p>
+                      <p>
+                        The main things we're wondering are regarding the context you facilitated it in (with whom, and toward what goal), how well it worked (what worked and what didn't), and in what ways you altered the instructions to make it work for you.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              }
+            </section>
           </main>
         </div>
       </Layout>
@@ -221,7 +261,9 @@ export default class PostTemplate extends React.Component {
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
-    airtable(data: {Slug: {eq: $slug}}) {
+    airtable(
+      data: {Slug: {eq: $slug}}
+      ){
       data {
         Title
         For
@@ -281,6 +323,28 @@ export const pageQuery = graphql`
         Other_Resource_Link
         Screencast
         YouTube
+        Replies {
+          data {
+            Reply_ID
+            Reply_Name
+            Reply_Email
+            Conditions {
+              childMarkdownRemark {
+                html
+              }
+            }
+            Results {
+              childMarkdownRemark {
+                html
+              }
+            }
+            Tweaks {
+              childMarkdownRemark {
+                html
+              }
+            }
+          }
+        }
       }
     }
   }
