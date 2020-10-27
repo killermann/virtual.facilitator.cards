@@ -8,8 +8,8 @@ class FourOhFour extends React.Component {
     return (
       <Layout>
         <Helmet />
-        <section class="bg-gray-300 min-h-screen p-8 py-16">   
-          <div class="error py-16 flex text-lg center-everything">
+        <section class="bg-gray-300 min-h-screen p-8 md:py-16">   
+          <div class="error py-8 md:py-16 flex text-lg center-everything">
             <article class="card wow">
               <header class="card-header leading-none bg-black">
                 <ul class="icon-list">

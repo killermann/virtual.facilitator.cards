@@ -71,11 +71,11 @@ export default class PostTemplate extends React.Component {
                   </h2>
                   <ol className="font-black">
                     {post.Gist && <li><a className="submenu p-2 block" href="#gist">Gist</a ></li>}
-                    {post.Steps && <li><a className="submenu p-2 block" href="#step-by-step">Step-by-Step</a  ></li>}
+                    {post.Steps && <li><a className="submenu p-2 block" href="#step-by-step">Step-by-Step</a></li>}
                     {post.Prep && <li><a className="submenu p-2 block" href="#prep">Prep</a ></li>}
-                    {post.Context && <li><a className="submenu p-2 block" href="#context">Context</a  ></li>}
+                    {post.Context && <li><a className="submenu p-2 block" href="#context">Context</a></li>}
                     {post.Additional_Resources && <li><a className="submenu p-2 block" href="#resources">Resources</a></li>}
-                    {author && <li><a className="submenu p-2 block" href="#author">Author</a  ></li>}
+                    {author && <li><a className="submenu p-2 block" href="#author">Author</a></li>}
                     {replies && <li><a className="submenu p-2 block" href="#replies">Tested &amp; Tweaked</a></li>}
                   </ol>
                 </nav>
@@ -218,7 +218,7 @@ export default class PostTemplate extends React.Component {
                         Contribute a Reply
                       </a>
                     </aside>
-                    <div className="bg-gray-100 prose rounded -mx-4 p-4 lg:mx-auto lg:p-8">
+                    <div className="primary bg-gray-100 prose rounded -mx-4 p-4 lg:mx-auto lg:mr-6 lg:p-8">
                       <p className="mb-4">
                         This activity by {author} would really benefit from <strong>other facilitators testing it, tweaking it, and reporting back</strong>. If you give it a try in your virtual facilitation, all we ask is that you <a className="font-bold" target="_blank" rel="noopener noreferrer" href={`https://airtable.com/shrateXsJe8xEkeAW?prefill_Reply%20Activity=${encodeURIComponent(titlePlusAuthor)}`}>tell us how it went</a>.
                       </p>

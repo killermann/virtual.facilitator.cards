@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "gatsby";
-import UserLinks from "../UserLinks/UserLinks";
 
 class Footer extends Component {
   render() {

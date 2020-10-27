@@ -17,7 +17,7 @@ class Author extends Component {
               </a> : 
               <Gravatar email={post.Email} size={128} className="border-2 border-color-gray-300 w-full rounded-lg" alt={'Author Headshot'}/>
             }
-            {author.Location && <span className="mt-2 inline-block author-location text-sm lg:text-base font-bold theme-font">{author.Location}</span>}
+            {author.Location && <span className="mt-1 inline-block author-location text-sm lg:text-base font-bold theme-font">{author.Location}</span>}
           </div>
           <div className="bio-text">
             {author.First_Name && <h3 className="theme-font font-black uppercase text-gray-900 text-lg md:text-xl mb-2 mt-2 md:mt-0">Activity by {author.First_Name} {author.Last_Name} </h3>}
