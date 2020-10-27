@@ -60,7 +60,6 @@ class Author extends Component {
               </li>}
             </ul>          
           </div>
-          
         </div>
       );
 
