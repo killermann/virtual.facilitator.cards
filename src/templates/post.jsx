@@ -197,8 +197,8 @@ export default class PostTemplate extends React.Component {
               {replies &&
               <div>
                 <h2 className="theme-font text-xl md:text-2xl lg:text-3xl text-gray-900 font-black mb-2 flex items-center flex-wrap">
-                  Tested &amp; Tweaked by 
-                  <Gravatar email={replies[0].data.Reply_Email} size={52} className="ml-2 rounded-sm" alt={replies[0].data.Reply_Name} />
+                  Tested &amp; Tweaked by&nbsp;
+                  <Gravatar email={replies[0].data.Reply_Email} size={52} className="rounded-sm" alt={replies[0].data.Reply_Name} />
                   {replies[1] && <Gravatar email={replies[1].data.Reply_Email} size={52} className="ml-2 rounded-sm" alt={replies[1].data.Reply_Name} /> }
                   {replies[2] && <Gravatar email={replies[2].data.Reply_Email} size={52} className="ml-2 rounded-sm" alt={replies[2].data.Reply_Name} /> }
                 </h2>

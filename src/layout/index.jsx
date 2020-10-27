@@ -1,7 +1,8 @@
 import React from "react";
 import Helmet from "react-helmet";
 import SEO from "../components/SEO/SEO";
-import Nav from "../components/Nav/Nav"
+import Nav from "../components/Nav/Nav";
+import Footer from "../components/Footer/Footer";
 import config from "../../data/SiteConfig";
 
 export default class Layout extends React.Component {
@@ -16,6 +17,7 @@ export default class Layout extends React.Component {
         </Helmet>
         <Nav />
         {children}
+        <Footer />
       </div>
     );
   }

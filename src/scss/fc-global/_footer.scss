@@ -59,9 +59,6 @@
 }
 
 #by {
-    background:#E0E0E0;
-    position:relative;
-    color: $grey-900 !important;
     @include mq('desktop'){
         &:after {
             display:block;
@@ -103,18 +100,11 @@
 #footer-menu {
     background: hsla(177%, 10%, 6%, 1);
     color: hsla(177%, 10%, 76%, 1);
-    font-size: 1.2em;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
 
     ul {
-        list-style: none;
-        margin: 0;
-
         li {
-            padding: 0;
             margin-bottom: 1em;
+            padding-right: 1em;
         }
     }
 
@@ -136,22 +126,7 @@
 #benefit-corporation {
     background: hsla(177%, 10%, 6%, 1);
     color: hsla(177%, 10%, 76%, 1);
-    padding-top: 0;
     margin-top: -2px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-
-    p {
-        margin: 0;
-        
-        a {
-            color: #fff;
-            text-decoration: underline;
-        }
-    }
-    
-    
 
     svg {
         min-width: 80px;
