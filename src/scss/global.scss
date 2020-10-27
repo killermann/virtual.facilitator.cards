@@ -57,6 +57,31 @@ h1.theme-font, h2.theme-font, h3.theme-font, h4.theme-font, h5.theme-font {
 
 // Components
 
+.tooltip {
+  position: relative;
+
+  &:before {
+    content: attr(data-tooltip);
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+    font-size: .75em;
+    line-height: 1;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    transition: all .1s ease-out;
+    @apply .bg-gray-900 .text-gray-100 .rounded-sm;
+  }
+
+  &:hover:before {
+    width: auto;
+    height: auto;
+    padding: .3em .5em;
+    transform: translate(-50%, 0);
+  }
+}
 .pop-out {
   @apply .transform .transition .duration-100 .ease-out;
   

@@ -34,7 +34,7 @@ class PostListing extends React.Component {
                   <span className="fci fci-zoom"><span className="sr-only">Zoom</span></span>
                   { post.apps && <span>&nbsp;+&nbsp;</span> }
                   { post.apps && <span className={`fci fci-${kebabCase(post.apps)}`}><span className="sr-only">{post.apps}</span></span>}
-                  { post.for && <span><span>&nbsp;=</span><i className={`ml-1 fci fci-${kebabCase(post.for)}`}></i></span>}
+                  { post.for && <span><span className="inline-block" style={{transform: 'translateY(-.1em)'}}>&nbsp;=</span><i className={`ml-1 fci fci-${kebabCase(post.for)}`}></i></span>}
                 </header>
                 <section className="p-6 pb-4">
                   <h3 className="theme-font text-color-default font-black text-xl mb-4">{post.title}</h3>

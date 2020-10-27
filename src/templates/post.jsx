@@ -42,7 +42,7 @@ export default class PostTemplate extends React.Component {
                 { post.Apps && <span>&nbsp;+&nbsp;</span> }
                 { post.Apps && 
                 <Link title={post.Apps} to={`/apps/${kebabCase(post.Apps)}`} className={`pop-out fci fci-${kebabCase(post.Apps)}`} style={{ color: '#fff' }}><span className="sr-only">{post.apps}</span></Link>}
-                { post.For && <span>&nbsp;=</span> }
+                { post.For && <span className="inline-block" style={{transform: 'translateY(-.1em)'}}>&nbsp;=</span> }
                 { post.For && 
                 <Link to={`/for/${kebabCase(post.For)}`} className={`ml-1 pop-out`} style={{ color: '#fff' }}><i className={`fci fci-${kebabCase(post.For)}`}></i></Link>}
               </div>
