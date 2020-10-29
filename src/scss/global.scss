@@ -107,6 +107,15 @@ h1.theme-font, h2.theme-font, h3.theme-font, h4.theme-font, h5.theme-font {
   }
 }
 
+.btn-cta-alt {
+  @apply .from-green-300 .to-teal-300 .text-teal-900;
+
+  &:hover, &:focus {
+    @apply  .from-green-200 .text-green-900;
+  }
+
+}
+
 .page-title {
   @apply .theme-font .text-2xl .font-black .leading-none;
 

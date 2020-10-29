@@ -1,6 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
-import { graphql, Link} from "gatsby";
+import { useStaticQuery, graphql, Link} from "gatsby";
+import Img from "gatsby-image";
 import Layout from "../layout";
 import PostListing from "../components/PostListing/PostListing";
 import SEO from "../components/SEO/SEO";
@@ -8,41 +9,45 @@ import config from "../../data/SiteConfig";
 
 class Index extends React.Component {
   render() {
+    const hero = this.props.data.hero;
     const latestPosts = this.props.data.latest.edges;
     const emotionPosts = this.props.data.emotion.edges;
     const ideationPosts = this.props.data.ideation.edges;
     const clarificationPosts = this.props.data.clarification.edges;
     const executionPosts = this.props.data.execution.edges;
-   
+
     return (
       <Layout>
         <Helmet>
           <title>{`${config.siteTitleAlt}`}</title>
           <SEO />
         </Helmet>
-        <section class="wrap wrap p-8 lg:py-12">   
-          <div className="griddled">
+        <section class="relative">
+          <div className="md:absolute top-0 left-0 right-0 z-0">
+            <Img fluid={hero.childImageSharp.fluid} alt="Facilitator Cards tangled in a webcam" />
+          </div>  
+          <div className="p-8 lg:py-12 relative griddled wrap z-100">
             <div>
-              <h1 className="page-title mb-6">
+              <h1 className="page-title mb-6 lg:py-6 xl:pt-12">
                 Virtual Facilitator Cards Facilitation Guide
               </h1>
-              <div className="bg-gray-100 p-6 mb-6 lg:mb-8 rounded prose">
+              <div className="md:p-6 md:mb-6 lg:mb-8 lg:mb-12 xl:mb-20 rounded prose" style={{background: 'rgba(255,255,255,.94)'}}>
                 👋 &nbsp;&nbsp;Hi friend! Welcome to your new source of activities for easy, creative virtual facilitation on Zoom! Quick heads up: <strong>this app is still in super-duper-beta</strong>. (We really leaned into the <a href="https://www.facilitator.cards/cards/whats-the-mvp/" target="_blank" rel="noopener noreferrer">What's the MVP?</a> process, and decided it was <a href="https://www.facilitator.cards/cards/urgent-vs-important-grid/" target="_blank" rel="noopener noreferrer">Important <em>and</em> Urgent</a> to get this out to you now, even though it's not done.) 
               </div>
             </div>
-            <div className="flex flex-wrap md:flex-col text-base">
+          </div>
+        </section>
+        <section className="relative griddled wrap pb-10">
+          <div className="primary">
+            <h2 className="theme-font font-black text-lg md:text-xl uppercase mb-4">Latest Activities</h2>
+            <PostListing postEdges={latestPosts} />
+          </div>
+          <aside className="sidebar relative md:pt-6">
+            <div className="sticky top-0 pt-6 flex flex-wrap md:flex-col text-base">
               <a className="btn mr-2 mb-2" href="https://airtable.com/shrseBJBvstTx2kbX" target="_blank" rel="noopener noreferrer">🐞&nbsp;&nbsp;Report Bug</a>
               <a className="btn mr-2 mb-2" href="https://airtable.com/shrkpcTZ2fd6wkLPV" target="_blank" rel="noopener noreferrer">🌱&nbsp;&nbsp; Suggest Improvement</a>
             </div>
-          </div>
-        </section>
-        <section className="griddled wrap pb-10">
-          <aside className="sidebar mt-6">
           </aside>
-          <div>
-            <h2 className="theme-font font-black text-lg md:text-xl uppercase mb-4 text-gray-500">Latest Activities</h2>
-            <PostListing postEdges={latestPosts} />
-          </div>
         </section>
         <section className="bg-gradient-to-br from-teal-700 to-teal-500 text-teal-200 md:m-2 md:rounded-sm">
           <div className="griddled wrap">
@@ -53,7 +58,7 @@ class Index extends React.Component {
               <PostListing postEdges={emotionPosts} />
             </div>
             <aside className="sidebar relative">
-              <div className="sticky -mt-6 md:mt-0 pb-6 md:py-12 top-0">
+              <div className="md:sticky -mt-6 md:mt-0 pb-6 md:py-12 top-0">
                 <p className="bg-teal-800 p-6 text-white rounded">
                   <strong><i className="fci fci-emotion"></i> Emotion</strong> activities are processes for surfacing thoughts, feelings, reactions, and predispositions. <Link className="font-black theme-font block mt-2 pt-2" to={`/for/emotion`}>View All &rarr;</Link>
                 </p>
@@ -70,7 +75,7 @@ class Index extends React.Component {
               <PostListing postEdges={ideationPosts} />
             </div>
             <aside className="sidebar relative">
-              <div className="sticky -mt-6 md:mt-0 pb-6 md:py-12 top-0">
+              <div className="md:sticky -mt-6 md:mt-0 pb-6 md:py-12 top-0">
                 <p className="bg-green-800 p-6 text-white rounded">
                   <strong><i className="fci fci-ideation"></i> Ideation</strong> activities are processes for forming, generating, and brainstorming ideas &amp; concepts. <Link className="font-black theme-font block mt-2 pt-2" to={`/for/ideation`}>View All &rarr;</Link>
                 </p>
@@ -87,7 +92,7 @@ class Index extends React.Component {
               <PostListing postEdges={clarificationPosts} />
             </div>
             <aside className="sidebar relative">
-              <div className="sticky -mt-6 md:mt-0 pb-6 md:py-12 top-0">
+              <div className="md:sticky -mt-6 md:mt-0 pb-6 md:py-12 top-0">
                 <p className="bg-yellow-800 p-6 text-white rounded">
                   <strong><i className="fci fci-clarification"></i> Clarification</strong> activities are processes for distilling, pinpointing, getting to the bottom, and finding common ground. <Link className="font-black theme-font block mt-2 pt-2" to={`/for/clarification`}>View All &rarr;</Link>
                 </p>
@@ -104,7 +109,7 @@ class Index extends React.Component {
               <PostListing postEdges={executionPosts} />
             </div>
             <aside className="sidebar relative">
-              <div className="sticky -mt-6 md:mt-0 pb-6 md:py-12 top-0">
+              <div className="md:sticky -mt-6 md:mt-0 pb-6 md:py-12 top-0">
                 <p className="bg-red-800 p-6 text-white rounded">
                   <strong><i className="fci fci-execution"></i> Execution</strong> activities are processes for decision-making, planning, strategizing, and directing. <Link className="font-black theme-font block mt-2 pt-2" to={`/for/execution`}>View All &rarr;</Link>
                 </p>
@@ -122,8 +127,19 @@ export default Index;
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query IndexQuery {
+    hero: file(relativePath: { eq: "hero-webcam-facilitator-cards-1600w.jpg" }) {
+      childImageSharp {
+        fluid (maxWidth: 1600, quality: 100){
+          base64
+          aspectRatio
+          src
+          srcSet
+          sizes
+        }
+      }
+    }
     latest: allAirtable(
-      limit: 6
+      limit: 8
       filter: {
         data: {Status: {eq: "Publish"}}, 
         table: {eq: "Activities"}

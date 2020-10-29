@@ -5,11 +5,13 @@ class Footer extends Component {
   render() {  
     return (
       <footer id="footer">
-        <section className="border-t-4 border-dotted border-gray-200 pt-8 pb-4">
-          <div className="wrap flex flex-wrap justify-center items-center">
-            <a className="btn text-lg btn-cta mr-4 mb-4" href="https://airtable.com/shrLdKbYqRPR6ssaL" target="_blank" rel="noopener noreferrer">🎁&nbsp;&nbsp;Submit Activity</a>
-            <a className="btn text-lg mr-4 mb-4" href="https://airtable.com/shrseBJBvstTx2kbX" target="_blank" rel="noopener noreferrer">🐞&nbsp;&nbsp;Report Bug</a>
-            <a className="btn text-lg mr-4 mb-4" href="https://airtable.com/shrkpcTZ2fd6wkLPV" target="_blank" rel="noopener noreferrer">🌱&nbsp;&nbsp; Suggest Improvement</a>
+        <section className="border-t-4 border-dotted border-gray-200">
+          <div className="wrap griddled">
+            <nav className="pt-8 pb-4 flex flex-wrap justify-center items-center">
+              <a className="btn text-lg btn-cta mr-4 mb-4" href="https://airtable.com/shrLdKbYqRPR6ssaL" target="_blank" rel="noopener noreferrer">🎁&nbsp;&nbsp;Submit Activity</a>
+              <a className="btn text-lg mr-4 mb-4" href="https://airtable.com/shrseBJBvstTx2kbX" target="_blank" rel="noopener noreferrer">🐞&nbsp;&nbsp;Report Bug</a>
+              <a className="btn text-lg mr-4 mb-4" href="https://airtable.com/shrkpcTZ2fd6wkLPV" target="_blank" rel="noopener noreferrer">🌱&nbsp;&nbsp; Suggest Improvement</a>
+            </nav>
           </div>
         </section>
         <section id="by" className="relative py-12 lg:py-20 bg-gray-200 text-gray-900">

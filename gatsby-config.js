@@ -4,6 +4,8 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
+const path = require(`path`)
+
 module.exports = {
   pathPrefix: config.pathPrefix === "" ? "/" : config.pathPrefix,
   siteMetadata: {
@@ -24,14 +26,17 @@ module.exports = {
     "gatsby-plugin-postcss",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-lodash",
+    "gatsby-plugin-netlify",
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "assets",
-        path: `${__dirname}/static/`
+        name: `assets`,
+        path: `${__dirname}/static/`,
+        name: `images`,
+        path: path.join(__dirname, `src`, `img`),
       }
     },
-	{
+	  {
       resolve: `gatsby-source-airtable`,
       options: {
         apiKey: process.env.AIRTABLE_API_KEY, // specify via env
@@ -103,6 +108,7 @@ module.exports = {
         color: config.themeColor
       }
     },
+    "gatsby-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-catch-links",

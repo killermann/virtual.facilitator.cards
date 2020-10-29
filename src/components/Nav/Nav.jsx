@@ -21,63 +21,63 @@ class Nav extends Component {
                 <option value="none" selected disabled hidden>
                   Pick a Card (any card)
                 </option>
-                <option>I Know vs. "I Wonder" Lists</option>
-                <option>4 Squares</option>
-                <option>5 Whys</option>
-                <option>10/10/10 Analysis</option>
+                <option>"I Know" vs. "I Wonder" Lists (soon)</option>
+                <option>4 Squares (soon)</option>
+                <option>5 Whys (soon)</option>
+                <option>10/10/10 Analysis (soon)</option>
                 <option>100 (Bad) Ideas</option>
                 {/* <option>Airport Signs</option> */}
                 {/* <option>Analogizing</option>*/} */}
-                <option>Anonymous Q&amp;A</option>
+                <option>Anonymous Q&amp;A (soon)</option>
                 {/* <option>Blank Clarification Card</option> */}
                 {/* <option>Blank Emotion Card</option> */}
                 {/* <option>Blank Execution Card</option> */}
                 {/* <option>Blank Ideation Card</option> */}
-                <option>Case Studies</option>
+                <option>Case Studies (soon)</option>
                 {/* <option>Causal Diagram</option> */}
                 {/* <option>Comparison Table</option> */}
                 {/* <option>Concentric Circles</option> */}
-                <option>Counterfactuals</option>
+                <option>Counterfactuals (soon)</option>
                 {/* <option>Debate Club</option> */}
                 {/* <option>Declarative Pairs</option> */}
-                <option>Different Angles</option>
-                <option>Dot Voting</option>
-                <option>Drawing Caricatures</option>
-                <option>Echoed Dialogue</option>
+                <option>Different Angles (soon)</option>
+                <option>Dot Voting (soon)</option>
+                <option>Drawing Caricatures (soon)</option>
+                <option>Echoed Dialogue (soon)</option>
                 <option>Fill in the Gap</option>
                 {/* <option>Fill in the Model</option> */}
-                <option>Finger Voting</option>
+                <option>Finger Voting (soon)</option>
                 <option>Fishbowl</option>
-                <option>Frequently Asked Questions</option>
+                <option>Frequently Asked Questions (soon)</option>
                 <option>Gallery Exhibit</option>
                 {/* <option>Generate a List</option> */}
-                <option>Go-Around Share</option>
-                <option>Heads Down, Hands Up</option>
+                <option>Go-Around Share (soon)</option>
+                <option>Heads Down, Hands Up (soon)</option>
                 <option>Hot Seat</option>
-                <option>Inside vs. Outside Thinking</option>
+                <option>Inside vs. Outside Thinking (soon)</option>
                 {/* <option>Magnet Statements</option> */}
                 {/* <option>Make a Model</option> */}
                 {/* <option>Matchstick Convos</option> */}
                 <option>Mindmapping</option>
-                <option>Minute Papers</option>
+                <option>Minute Papers (soon)</option>
                 {/* <option>Opposite Thinking</option> */}
-                <option>Pair &amp; Share</option>
-                <option>Popcorn Share</option>
+                <option>Pair &amp; Share (soon)</option>
+                <option>Popcorn Share (soon)</option>
                 {/* <option>Poster Presentation</option> */}
                 {/* <option>Pro/Con Lists</option> */}
-                <option>Rank Order Voting</option>
+                <option>Rank Order Voting (soon)</option>
                 <option>Red Team vs. Blue Team</option>
-                <option>Reverse Engineering</option>
+                <option>Reverse Engineering (soon)</option>
                 <option>Sharing Withholds</option>
                 {/* <option>Silent Reflection</option> */}
-                <option>Spectrum Questions</option>
-                <option>Sticky Note Generator</option>
-                <option>Strike a Pose</option>
+                <option>Spectrum Questions (soon)</option>
+                <option>Sticky Note Generator (soon)</option>
+                <option>Strike a Pose (soon)</option>
                 {/* <option>Subcommittees</option> */}
                 {/* <option>SWOT Analysis</option> */}
                 {/* <option>Thinking &amp; Feeling</option> */}
-                <option>Timeline Map</option>
-                <option>Urgent vs. Important Grid</option>*/}
+                <option>Timeline Map (soon)</option>
+                <option>Urgent vs. Important Grid (soon)</option>*/}
                 <option>Vanishing Options</option>
                 {/* <option>Venn Diagram</option>*/}
                 {/* <option>What's the MVP?</option> */}
