@@ -68,7 +68,7 @@ class Nav extends Component {
                 <option>Rank Order Voting (soon)</option>
                 <option>Red Team vs. Blue Team</option>
                 <option>Reverse Engineering (soon)</option>
-                <option>Sharing Withholds</option>
+                <option>Sharing Withholds (soon)</option>
                 {/* <option>Silent Reflection</option> */}
                 <option>Spectrum Questions (soon)</option>
                 <option>Sticky Note Generator (soon)</option>
