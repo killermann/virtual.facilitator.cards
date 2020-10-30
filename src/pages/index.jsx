@@ -26,12 +26,12 @@ class Index extends React.Component {
           <div className="md:absolute top-0 left-0 right-0 z-0">
             <Img fluid={hero.childImageSharp.fluid} alt="Facilitator Cards tangled in a webcam" />
           </div>  
-          <div className="p-8 lg:py-12 relative griddled wrap z-100">
+          <div className="p-8 lg:py-10 relative griddled wrap z-100">
             <div>
-              <h1 className="page-title mb-6 lg:py-6 xl:text-4xl xl:pt-12">
+              <h1 className="page-title mb-6 lg:py-6 xl:text-4xl xl:pt-12 xl:text-5xl">
                 Virtual Facilitator Cards Facilitation Guide
               </h1>
-              <div className="md:p-6 md:mb-6 lg:mb-8 lg:mb-12 xl:mb-20 rounded prose" style={{background: 'rgba(255,255,255,.94)'}}>
+              <div className="md:p-6 md:mb-6 lg:mb-8 lg:mb-12 xl:mb-20 rounded prose" style={{background: 'rgba(255,255,255,.9)'}}>
                 <p>
                   👋 &nbsp;&nbsp;Hi friend! Welcome to your new source of activities for easy, creative virtual facilitation on Zoom! Every week, we'll add 4 new activities, as well as new replies from facilitators who are testing and tweaking them. Join the <Link to={`/newsletter`}>free newsletter</Link> for updates.
                 </p>
@@ -44,7 +44,7 @@ class Index extends React.Component {
             <h2 className="theme-font font-black text-lg md:text-xl uppercase mb-8">Latest Activities</h2>
             <PostListing postEdges={latestPosts} />
           </div>
-          <aside className="sidebar relative md:pt-6">
+          <aside className="sidebar relative md:-mt-6 md:pt-6">
             <p className="bg-white rounded mt-6 md:mt-0 md:p-4 leading-tight">
               Quick heads up: <strong>this app is still in super-duper-beta</strong>. (We really leaned into the <a className="underline hover:text-teal-600" href="https://www.facilitator.cards/cards/whats-the-mvp/" target="_blank" rel="noopener noreferrer">What's the MVP?</a> process, and decided it was <a className="underline hover:text-teal-600" href="https://www.facilitator.cards/cards/urgent-vs-important-grid/" target="_blank" rel="noopener noreferrer">Important <em>and</em> Urgent</a> to get this out to you now, even though it's not done.) 
             </p>
