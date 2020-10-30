@@ -8,9 +8,10 @@ class Footer extends Component {
         <section className="border-t-4 border-dotted border-gray-200">
           <div className="wrap griddled">
             <nav className="pt-8 pb-4 flex flex-wrap justify-center items-center">
-              <a className="btn text-lg btn-cta mr-4 mb-4" href="https://airtable.com/shrLdKbYqRPR6ssaL" target="_blank" rel="noopener noreferrer">🎁&nbsp;&nbsp;Submit Activity</a>
-              <a className="btn text-lg mr-4 mb-4" href="https://airtable.com/shrseBJBvstTx2kbX" target="_blank" rel="noopener noreferrer">🐞&nbsp;&nbsp;Report Bug</a>
-              <a className="btn text-lg mr-4 mb-4" href="https://airtable.com/shrkpcTZ2fd6wkLPV" target="_blank" rel="noopener noreferrer">🌱&nbsp;&nbsp; Suggest Improvement</a>
+              <a className="btn text-lg btn-cta mr-4 mb-4" href="https://airtable.com/shrLdKbYqRPR6ssaL" target="_blank" rel="noopener noreferrer">🎁&nbsp;Submit Activity</a>
+              <a className="btn text-lg mr-4 mb-4" href="https://airtable.com/shrseBJBvstTx2kbX" target="_blank" rel="noopener noreferrer">🐞&nbsp;Report Bug</a>
+              <a className="btn text-lg mr-4 mb-4" href="https://airtable.com/shrkpcTZ2fd6wkLPV" target="_blank" rel="noopener noreferrer">🌱&nbsp; Suggest Improvement</a>
+              <Link className="btn btn-cta-alt text-lg btn-cta mr-4 mb-4" to={`/newsletter`}>💌&nbsp; Join Newsletter</Link>
             </nav>
           </div>
         </section>
