@@ -19,7 +19,7 @@ class NewsletterPage extends Component {
               </aside>
               <div className="primary lg:pr-6">
                 <h1 className="page-title mb-6">
-                  Join our Newsletter :)
+                  Join our (Virtual) Newsletter 😉
                 </h1>
                 <section className="prose">
                   <p className="text-lg lg:text-xl">

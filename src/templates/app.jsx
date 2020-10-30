@@ -23,7 +23,7 @@ export default class AppsTemplate extends React.Component {
               <h1 className="page-title mb-6">
                 Activities for Virtual Facilitation on Zoom using {Apps}
               </h1>
-              <p className="text-lg theme-font lg:text-xl">
+              <p className="text-lg theme-font lg:text-xl mb-6 md:mb-0">
                 Activities that use {Apps} to replace in-person props, leading to easy and creative remote remote facilitation, contributed by facilitators like <AuthorsListing postEdges={postEdges} />.
               </p>
             </div>

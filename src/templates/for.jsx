@@ -23,7 +23,7 @@ export default class ForTemplate extends React.Component {
                 <h1 className="page-title mb-6">
                   Virtual Activities for Facilitating <span>{toLaxTitleCase(For)}</span> Processes
                 </h1>
-                <p className="text-lg theme-font lg:text-xl">
+                <p className="text-lg theme-font lg:text-xl mb-6 md:mb-0">
                   Activities for 
                   { For === "emotion" && 
                     <span> surfacing thoughts, feelings, reactions, and predispositions on</span>
