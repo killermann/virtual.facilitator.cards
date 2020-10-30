@@ -87,7 +87,7 @@ export default class PostTemplate extends React.Component {
                 <div className="byline my-6">
                   <a className="flex items-center" href="#author">
                     <Gravatar email={post.Email} size={46} className="rounded mr-2 border-gray-300 border-2" alt={'Author Headshot'} />
-                    <span className="uppercase text-lg theme-font font-black text-gray-600">{author}</span></a>
+                    <span className="uppercase md:text-lg theme-font font-black text-gray-600">{author}</span></a>
                 </div>
              
                 <section id="gist" className="text-lg lg:text-xl prose" dangerouslySetInnerHTML={{ __html: post.Gist.childMarkdownRemark.html }} />

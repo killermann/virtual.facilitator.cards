@@ -117,11 +117,7 @@ h1.theme-font, h2.theme-font, h3.theme-font, h4.theme-font, h5.theme-font {
 }
 
 .page-title {
-  @apply .theme-font .text-2xl .font-black .leading-none;
-
-  @screen md {
-    @apply .text-3xl;
-  }
+  @apply .theme-font .text-3xl .font-black .leading-none;
 
   @screen lg {
     @apply .text-4xl;
