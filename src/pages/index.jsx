@@ -23,7 +23,7 @@ class Index extends React.Component {
           <SEO />
         </Helmet>
         <section class="relative">
-          <div className="md:absolute top-0 left-0 right-0 z-0">
+          <div className="absolute top-0 left-0 right-0 z-0">
             <Img fluid={hero.childImageSharp.fluid} alt="Facilitator Cards tangled in a webcam" />
           </div>  
           <div className="p-8 lg:py-10 relative griddled wrap z-100">
