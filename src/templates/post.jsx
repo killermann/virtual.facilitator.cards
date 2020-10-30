@@ -64,7 +64,6 @@ export default class PostTemplate extends React.Component {
                     </Link>
                   <div className="text-sm mt-2 text-gray-700 text-center">...but on Zoom, with digital props!</div>
                 </div>
-                
                 <nav className="theme-font py-6 text-lg md:sticky md:top-0 leading-none">
                   <h2 className="p-2" id="table-of-contents">
                     Contents:
@@ -92,38 +91,33 @@ export default class PostTemplate extends React.Component {
                 </div>
              
                 <section id="gist" className="text-lg lg:text-xl prose" dangerouslySetInnerHTML={{ __html: post.Gist.childMarkdownRemark.html }} />
-                
                 {post.Steps && 
                   <section className="mt-12" id="step-by-step">
                     <h2 className="theme-font text-xl md:text-2xl lg:text-3xl font-black mb-2">Step-by-Step Instructions</h2>
                     <div className="bg-gray-100 prose rounded -mx-4 p-4 lg:mx-auto lg:p-8" dangerouslySetInnerHTML={{ __html: post.Steps.childMarkdownRemark.html }} />
                   </section>
                 }
-
                 {post.Prep && 
                   <section className="mt-12" id="prep">
                     <h2 className="theme-font text-xl md:text-2xl lg:text-3xl font-black mb-2">Prep</h2>
                     <div className="bg-gray-100 prose rounded -mx-4 p-4 lg:mx-auto lg:p-8" dangerouslySetInnerHTML={{ __html: post.Prep.childMarkdownRemark.html }} />
                   </section>
                 }
-                
                 {post.Context && 
                   <section className="mt-12" id="context">
                     <h2 className="theme-font text-xl md:text-2xl lg:text-3xl font-black mb-2">Context</h2>
                     <div className="bg-gray-100 prose rounded -mx-4 p-4 lg:mx-auto lg:p-8" dangerouslySetInnerHTML={{ __html: post.Context.childMarkdownRemark.html }} />
                   </section>
                 }
-
                 {post.Features && 
                   <section className="mt-12" id="features">
                     <h2 className="theme-font text-xl md:text-2xl lg:text-3xl font-black mb-2">Substituting Apps</h2>
                     <div className="bg-gray-100 prose rounded -mx-4 p-4 lg:mx-auto lg:p-8">
                       <p className="mb-4">If you're using apps other than <strong>Zoom</strong>{ post.Apps && <span> and <strong>{post.Apps}</strong></span>}, here are the specific things your software will need to be able to do:</p>
-                      <div className="prose" dangerouslySetInnerHTML={{ __html: post.Features.childMarkdownRemark.html }} />
+                      <div className="prose " dangerouslySetInnerHTML={{ __html: post.Features.childMarkdownRemark.html }} />
                     </div>
                   </section>
                 }
-
                 {post.Additional_Resources && 
                   <section className="mt-12" id="resources">
                     <h2 className="theme-font text-xl md:text-2xl lg:text-3xl font-black mb-2">Additional Resources</h2>
