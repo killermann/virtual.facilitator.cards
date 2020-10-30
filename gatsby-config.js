@@ -50,7 +50,8 @@ module.exports = {
               Gist: `text/markdown`, 
               Steps: `text/markdown`,
               Prep:  `text/markdown`,
-              Context: `text/markdown`
+              Context: `text/markdown`,
+              Features: `text/markdown`
             },
           },
           {

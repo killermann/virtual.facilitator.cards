@@ -118,7 +118,8 @@ export default class PostTemplate extends React.Component {
                   <section className="mt-12" id="features">
                     <h2 className="theme-font text-xl md:text-2xl lg:text-3xl font-black mb-2">Substituting Apps</h2>
                     <div className="bg-gray-100 prose rounded -mx-4 p-4 lg:mx-auto lg:p-8">
-                      <p>If you're using apps other than <strong>Zoom</strong> { post.Apps && <span>and <strong>{post.Apps}</strong></span>}, here are the specific things your software will need to be able to do: <strong>{ post.Features }</strong></p>
+                      <p className="mb-4">If you're using apps other than <strong>Zoom</strong>{ post.Apps && <span> and <strong>{post.Apps}</strong></span>}, here are the specific things your software will need to be able to do:</p>
+                      <div className="prose" dangerouslySetInnerHTML={{ __html: post.Features.childMarkdownRemark.html }} />
                     </div>
                   </section>
                 }
@@ -320,7 +321,11 @@ export const pageQuery = graphql`
             html
           }
         }
-        Features
+        Features {
+          childMarkdownRemark {
+            html
+          }
+        }
         Additional_Resources
         Type_of_Template
         Slides
