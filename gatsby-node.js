@@ -64,7 +64,7 @@ exports.createPages = async ({ graphql, actions }) => {
                 For
                 Slug
                 Apps
-                Date(formatString: $dateFormat)
+                Published_Date(formatString: $dateFormat)
                 Status
               }
             }
