@@ -21,7 +21,7 @@ class Nav extends Component {
                 <option value="none" selected disabled hidden>
                   Pick a Card (any card)
                 </option>
-                <option>"I Know" vs. "I Wonder" Lists (soon)</option>
+                <option>"I Know" vs. "I Wonder" Lists</option>
                 <option>4 Squares (soon)</option>
                 <option>5 Whys (soon)</option>
                 <option>10/10/10 Analysis (soon)</option>
@@ -33,7 +33,7 @@ class Nav extends Component {
                 {/* <option>Blank Emotion Card</option> */}
                 {/* <option>Blank Execution Card</option> */}
                 {/* <option>Blank Ideation Card</option> */}
-                <option>Case Studies (soon)</option>
+                <option>Case Studies</option>
                 {/* <option>Causal Diagram</option> */}
                 {/* <option>Comparison Table</option> */}
                 {/* <option>Concentric Circles</option> */}
@@ -41,7 +41,7 @@ class Nav extends Component {
                 {/* <option>Debate Club</option> */}
                 {/* <option>Declarative Pairs</option> */}
                 <option>Different Angles (soon)</option>
-                <option>Dot Voting (soon)</option>
+                <option>Dot Voting</option>
                 <option>Drawing Caricatures (soon)</option>
                 <option>Echoed Dialogue (soon)</option>
                 <option>Fill in the Gap</option>
@@ -72,7 +72,7 @@ class Nav extends Component {
                 {/* <option>Silent Reflection</option> */}
                 <option>Spectrum Questions (soon)</option>
                 <option>Sticky Note Generator (soon)</option>
-                <option>Strike a Pose (soon)</option>
+                <option>Strike a Pose</option>
                 {/* <option>Subcommittees</option> */}
                 {/* <option>SWOT Analysis</option> */}
                 {/* <option>Thinking &amp; Feeling</option> */}

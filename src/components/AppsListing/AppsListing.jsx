@@ -6,14 +6,18 @@ class AppsListing extends React.Component {
   getAppsList() {
     const appsList = [];
     this.props.postEdges.forEach(postEdge => {
-      appsList.push({
-        apps: postEdge.node.data.Apps
-      });
+      if(postEdge.node.data.Apps != null){
+        appsList.push({
+          apps: postEdge.node.data.Apps
+        });
+      }
     });
     return appsList;
   }
   render() {
-    const appsList = this.getAppsList();
+    
+    const appsList = this.getAppsList().filter(Boolean) ;
+
     return (
       <span>
         { appsList.slice(0,1).map((post, i) => [
