@@ -22,9 +22,9 @@ class Nav extends Component {
                   Pick a Card (any card)
                 </option>
                 <option>"I Know" vs. "I Wonder" Lists</option>
-                <option>4 Squares (soon)</option>
+                <option>4 Squares</option>
                 <option>5 Whys (soon)</option>
-                <option>10/10/10 Analysis (soon)</option>
+                <option>10/10/10 Analysis</option>
                 <option>100 (Bad) Ideas</option>
                 {/* <option>Airport Signs</option> */}
                 {/* <option>Analogizing</option>*/} */}
@@ -43,7 +43,7 @@ class Nav extends Component {
                 <option>Different Angles (soon)</option>
                 <option>Dot Voting</option>
                 <option>Drawing Caricatures (soon)</option>
-                <option>Echoed Dialogue (soon)</option>
+                <option>Echoed Dialogue</option>
                 <option>Fill in the Gap</option>
                 {/* <option>Fill in the Model</option> */}
                 <option>Finger Voting (soon)</option>
@@ -59,7 +59,7 @@ class Nav extends Component {
                 {/* <option>Make a Model</option> */}
                 {/* <option>Matchstick Convos</option> */}
                 <option>Mindmapping</option>
-                <option>Minute Papers (soon)</option>
+                <option>Minute Papers</option>
                 {/* <option>Opposite Thinking</option> */}
                 <option>Pair &amp; Share (soon)</option>
                 <option>Popcorn Share (soon)</option>
