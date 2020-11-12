@@ -25,7 +25,7 @@ export default class CardTemplate extends React.Component {
                   <span>{toLaxTitleCase(Card)}</span> Virtual Facilitation Activities
                 </h1>
                 <p className="text-lg theme-font lg:text-xl mb-6 md:mb-0">
-                  Activities facilitating {Card} on Zoom, replacing the in-person props with apps like <AppsListing postEdges={postEdges} />, contributed by facilitators like <AuthorsListing postEdges={postEdges} />.
+                  Activities facilitating {Card} on Zoom, replacing the in-person props with apps<AppsListing postEdges={postEdges} />, contributed by facilitators like <AuthorsListing postEdges={postEdges} />.
                 </p>
               </div>
               <aside className="relative">

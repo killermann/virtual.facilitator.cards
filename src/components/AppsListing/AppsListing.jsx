@@ -22,6 +22,7 @@ class AppsListing extends React.Component {
       <span>
         { appsList.slice(0,1).map((post, i) => [
           <span key={post.apps} className={"" + post.apps}>
+            &nbsp;like&nbsp;
             {/* { (appsList.length > 2 && i === appsList.length - 1) ? ' & ' : ''} */}
             <Link className="underline hover:text-black" to={`/apps/${kebabCase(post.apps)}`} key={post.apps}>
               {post.apps}
